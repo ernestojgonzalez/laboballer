@@ -31,14 +31,14 @@ echo "<BR>";
 	include "coneccionbasedatosmysql.inc";
 	$enlace =conectarbase();
 // $enlace se iguala a la funcion cenectarbase()
-	$id_equipo=$_REQUEST['id_equipo'];  	
+	$cedula=$_REQUEST['cedula'];  	
 	//requiere o recibe la variable num_reg
 if (!$enlace)
 {
 	echo "Falla en la Conexion con la base de datos";
 	exit;
 }
-$resultado = mysql_query ("SELECT titulo, archivo FROM equipo  WHERE $id_equipo=id_equipo", $enlace);
+$resultado = mysql_query ("SELECT titulo, archivo FROM empleado  WHERE $cedula=cedula", $enlace);
  //$resultado = mysql_query ("SELECT codigo_equipo, titulo, archivo FROM equipo  WHERE match (codigo_equipo, titulo, archivo)('$codigo_equipo*' IN BOOLEAN MODE", $enlace);
 if (!$resultado)
 {
@@ -49,14 +49,14 @@ if (!$resultado)
         echo "";
           
 		  
-			 $resultado = mysql_query ("UPDATE equipo SET titulo='', archivo='' WHERE $id_equipo=id_equipo", $enlace);
+			 $resultado = mysql_query ("UPDATE equipo SET titulo='', archivo='' WHERE $cedula=cedula", $enlace);
 
 		 mysql_close();
 
    ?>
                  
    
-<form method="post" name="form1" id="form1" enctype="multipart/form-data" action="modicar_foto_equipo1.php">
+<form method="post" name="form1" id="form1" enctype="multipart/form-data" action="modicar_foto_empleado.php">
       
 	  <p>&nbsp;</p>
          <p align="center" class="Estilo3"><strong>MODIFICAR ARCHIVO</strong></p>
@@ -87,9 +87,9 @@ if (!$resultado)
 
 
 <input name="submit" type="submit" value="Guardar">
-<input type="hidden" name="id_equipo" id="id_equipo" value="<?php 
-$id_equipo=$_REQUEST['id_equipo'];
-echo $id_equipo?>">
+<input type="hidden" name="cedula" id="cedula" value="<?php 
+$cedula=$_REQUEST['cedula'];
+echo $cedula?>">
 </center>
 </form>							  
 

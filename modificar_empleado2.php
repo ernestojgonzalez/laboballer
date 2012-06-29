@@ -165,23 +165,19 @@
         <br>
         <strong> </strong>
         <br>
-        <br>
-        
-        <br>
-        <br>
+
                           </table>
       <p>&nbsp;</p>
-      <p><br>
+      
         <br>
         <strong>FOTO DEL EQUIPO</strong>
-        <br>
-        <br>
-        <strong><a href="modificar_foto_empleado.php?id_equipo=<?php echo $id_equipo?>">Si desea Modificar la Foto pulse aqui</a></strong>
+<br>
+        <strong><a href="modificar_foto_empleado1.php?cedula=<?php echo $cedula?>">Si desea Modificar la Foto pulse aqui</a></strong>
         <br>
         <br>
         
         
-        <input type="hidden" name="id_equipo" id="id_equipo" value="<?php echo $id_equipo ?>"> 
+        <input type="hidden" name="cedula" id="cedula" value="<?php echo $cedula ?>"> 
         
         </p>
 </div>

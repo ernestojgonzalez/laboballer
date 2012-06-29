@@ -4,10 +4,11 @@
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
 <title>SISTEMA </title>
 
-
+</head>
+<body>
 
 <?php
-$id_equipo=$_REQUEST['id_equipo'];
+$cedula=$_REQUEST['cedula'];
 	//recibe variabla codigo_equipo
 $titulo=$_POST['titulo'];
 		//declarando la variable $titulo
@@ -39,7 +40,7 @@ else
            {
              $ruta = "rutas/$nombre_archivo2"; 
 			 // modifica la tabla cuando el nu de registro sea igual al num de registro recibido
-             $Insertar= "UPDATE equipo SET titulo='$titulo', archivo='$ruta' WHERE $id_equipo=id_equipo";
+             $Insertar= "UPDATE empleado SET titulo='$titulo', archivo='$ruta' WHERE $cedula=cedula";
              $resultadoins=basedatos($Insertar);
              echo "<table id='background-image'  align=center><tr><td><BR><p><strong><center>Informe almacenado</center></strong></p><BR></td></tr></table>";
            }

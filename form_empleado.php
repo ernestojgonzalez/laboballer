@@ -1,15 +1,8 @@
-<?php require_once('Connections/conexion.php'); ?>
-<?php
-mysql_select_db($database_conexion, $conexion);
-$query_si = "SELECT * FROM empleado";
-$si = mysql_query($query_si, $conexion) or die(mysql_error());
-$row_si = mysql_fetch_assoc($si);
-$totalRows_si = mysql_num_rows($si);
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Documento sin t&iacute;tulo</title>
+<title>FORMULARIO EMPLEADO</title>
 
 <style type="text/css">
 @import url(calendario/calendar-blue.css);</style>
@@ -27,40 +20,7 @@ $totalRows_si = mysql_num_rows($si);
 <br>   
  
 <p align="center" class="Estilo3"><strong>REGISTRO DE EMPLEADO</strong> 
-  <label for="textfield"></label>
-  <input type="text" name="ssss" id="ssss" />
-  <label for="select"></label>
-  <select name="select" id="select">
-    <option value="nombre" <?php if (!(strcmp("nombre", $row_si['nombre']))) {echo "selected=\"selected\"";} ?>>nombre</option>
-<?php
-do {  
-?>
-    <option value="<?php echo $row_si['nombre']?>"<?php if (!(strcmp($row_si['nombre'], $row_si['nombre']))) {echo "selected=\"selected\"";} ?>><?php echo $row_si['nombre']?></option>
-<?php
-} while ($row_si = mysql_fetch_assoc($si));
-  $rows = mysql_num_rows($si);
-  if($rows > 0) {
-      mysql_data_seek($si, 0);
-	  $row_si = mysql_fetch_assoc($si);
-  }
-?>
-  </select>
-  <label for="label"></label>
-  <select name="select2" id="label">
-    <option value="cedula" <?php if (!(strcmp("cedula", $row_si['ci']))) {echo "selected=\"selected\"";} ?>>cedula</option>
-    <?php
-do {  
-?>
-    <option value="<?php echo $row_si['cedula']?>"<?php if (!(strcmp($row_si['cedula'], $row_si['cedula']))) {echo "selected=\"selected\"";} ?>><?php echo $row_si['cedula']?></option>
-    <?php
-} while ($row_si = mysql_fetch_assoc($si));
-  $rows = mysql_num_rows($si);
-  if($rows > 0) {
-      mysql_data_seek($si, 0);
-	  $row_si = mysql_fetch_assoc($si);
-  }
-?>
-  </select>
+ 
 </p>
 
 <div align="center"><br>
@@ -181,6 +141,3 @@ do {
 
 </body>
 </html>
-<?php
-mysql_free_result($si);
-?>

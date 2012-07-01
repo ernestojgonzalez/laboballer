@@ -9,7 +9,7 @@ $totalRows_si = mysql_num_rows($si);
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Documento sin t&iacute;tulo</title>
+<title>FORMULARIO</title>
 
 <style type="text/css">
 @import url(calendario/calendar-blue.css);</style>

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>Sistema </title>
+<title>LABOBALLER</title>
 
 
 </head>
 <body>
 
 <form action="modificar_equipo2.php" method="post" name="form1" id="form1">
+<div align="center">
+<br />
+<br />
 <table width="200" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
 <tr>
   <td width="80"><strong><div align="center">Código del Equipo</div></strong></td>
@@ -18,6 +21,7 @@
 </table>
 <br>
 <input name="submit" type="submit" value="Buscar">
+</div>
 </form>
 </center>
 

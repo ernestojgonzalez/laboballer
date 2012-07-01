@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>Sistema </title>
+<title>LABOBALLER</title>
 <style type="text/css">
 @import url(calendario/calendar-blue.css);</style>
 <script type="text/javascript" src="calendario/calendar.js"></script>
@@ -23,7 +23,11 @@
 	//declarando la variable $criterio
 	$enlace =conectarbase();
 	// $enlace se iguala a la funcion cenectarbase()
-  $consulta="SELECT * FROM empleado where match (cedula,nombre,apellido,sexo,telefono,direccion,fecha,horario,cargo) against ('$criterio*' IN BOOLEAN MODE) ";
+  
+    
+   $consulta = "SELECT * from empleado where cedula = '$criterio';";
+  
+  
  //  $consulta = "SELECT * from empleado where codigo_equipo = '$criterio';";
   // consulta a la tabla informe_personal
                    $resultado=basedatos($consulta);
@@ -32,7 +36,7 @@
                    if($nro_fil == 0)
                    {
 
-                   echo "<center><table><tr><td><br><br><strong><center>El informe $criterio no existe.</center></strong></td></tr></table></center>";
+                   echo "<center><table><tr><td><br><br><strong><center>El empleado $criterio no existe en nuestra base de datos <br> por favor valide sus datos.</center></strong></td></tr></table></center>";
                    }else
                    {
                    while ($row = mysql_fetch_row($resultado)){
@@ -53,7 +57,9 @@
      
       <table width="400" border="8" bordercolor="#CCCCCC">
         <tr><td><strong>Nombre del empleado:</strong></td><td><?php echo "  $row[1]" ?></td></tr>
-        <tr><td><strong>Apellido </strong><strong>del empleado :</strong></td><td><?php echo "  $row[2]" ?></td></tr>
+        <tr>
+          <td><strong>Apellido </strong><strong>del empleado:</strong></td>
+          <td><?php echo "  $row[2]" ?></td></tr>
         <tr><td><strong>Cédula    </strong><strong>del empleado:</strong></td><td><?php echo "  $row[0]" ?></td></tr>
         <tr><td><strong>Sexo:</strong></td><td><?php echo "$row[6]" ?></td></tr>
         <tr><td><strong>Telefono:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
@@ -71,7 +77,7 @@
   
         
   <p align="center" class="Estilo3"><strong>MODIFICAR EMPLEADO</strong></p>
-     <br>    
+    
         <table  width="772" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
           <tr>
             <td width="100"><div align="center"><strong>Nombre del Empleado </strong></div></td>
@@ -160,41 +166,25 @@
   <input name="cargo" type="text" id="cargo" value="<?php echo $cargo ?>" />             
             </div></td>
         </tr>
-        </table>
-    <br>
-        <br>
-        <strong> </strong>
-        <br>
-
-                          </table>
-      <p>&nbsp;</p>
-      
-        <br>
+               </table>
+      <p>&nbsp;
         <strong>FOTO DEL EQUIPO</strong>
 <br>
         <strong><a href="modificar_foto_empleado1.php?cedula=<?php echo $cedula?>">Si desea Modificar la Foto pulse aqui</a></strong>
-        <br>
-        <br>
-        
-        
+
         <input type="hidden" name="cedula" id="cedula" value="<?php echo $cedula ?>"> 
-        
-        </p>
+           
 </div>
 <tr><td colspan="2"><div align="center"><strong><br>
-      <br>
+
 Presione el botón continuar para guardar los cambios</strong></div></td></tr>
-    <div align="center"><br>
-      <br>
-      
-      <br>
+    <div align="center">
     </div>
-<tr><td colspan="2"><div align="center"><br>
+<tr><td colspan="2"><div align="center">
       <input name="submit" type="submit" value="Continuar">
 </div></td></tr>
     <div align="center">
       </div>
-      S
       </form>
       </center>
       </table>

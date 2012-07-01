@@ -28,7 +28,7 @@
 
 	$resultado=mysql_query($consulta,$enlace);
 
-?>
+?><title>Consulta-LABOBALLER</title>
 
 
 

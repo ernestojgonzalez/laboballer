@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_equip" value="name:nombre_equipo;datatype:string" />
+	<infoitem key="UD_nueva" value="name:nombre_equipo;datatype:string" />
+	<infoitem key="UD_otra" value="name:nombre_equipo;datatype:string" />
+</info>

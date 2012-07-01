@@ -28,7 +28,7 @@
 
 	$resultado=mysql_query($consulta,$enlace);
 
-?>
+?><title>Consulta-LABOBALLER</title>
 
 
 
@@ -52,9 +52,9 @@
 	<TH bgcolor="#E4E4E7" width="130">Marca</TH>
 	<TH bgcolor="#E4E4E7" width="130">Descripción</TH>
     <TH bgcolor="#E4E4E7" width="90">Herramientas</TH>
-	<TH bgcolor="#E4E4E7" width="90">Fecha de ingreso</TH>
+	<TH bgcolor="#E4E4E7" width="90">Estado del Equipo</TH>
 	<TH bgcolor="#E4E4E7" width="120">Cantidad</TH>
-	<TH bgcolor="#E4E4E7" width="120">Estado del Equipo</TH>
+	<TH bgcolor="#E4E4E7" width="120">Fecha de ingreso</TH>
 	<TH bgcolor="#E4E4E7" width="120">Mostrar Foto del Equipo</TH>
   </tr>
 

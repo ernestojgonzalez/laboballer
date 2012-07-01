@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>Sistema </title>
+<title>LABOBALLER</title>
 <style type="text/css">
 @import url(calendario/calendar-blue.css);</style>
 <script type="text/javascript" src="calendario/calendar.js"></script>
@@ -14,9 +14,11 @@
 
 </head>
 <body>
+<div align="center">
 
-
-    <?php
+    <p>&nbsp;      </p>
+    <p>
+      <?php
     include "coneccionbasedatosmysql.inc";
     $criterio = $_POST['criterio'];
 	//declarando la variable $criterio
@@ -31,7 +33,7 @@
                    if($nro_fil == 0)
                    {
 
-                   echo "<center><table><tr><td><br><br><strong><center>El informe $criterio no existe.</center></strong></td></tr></table></center>";
+                   echo "<center><table><tr><td><br><br><strong><center>El equipo $criterio <br> no existe en nuestra base de datos.</center></strong></td></tr></table></center>";
                    }else
                    {
                    while ($row = mysql_fetch_row($resultado)){
@@ -49,11 +51,8 @@
 
 				   $link2=$row[9];
                    ?>
-
-<strong>MODIFICAR INFORME</strong>
-<br>
-<br>
-                      <table width="400" border="8" bordercolor="#CCCCCC">
+      <strong>MODIFICAR EQUIPO</strong>    </p>
+    <table width="400" border="8" bordercolor="#CCCCCC">
                       <tr><td><strong>Nombre del equipo:</strong></td><td><?php echo "  $row[1]" ?></td></tr>
                       <tr><td><strong>Código del equipo:</strong></td><td><?php echo "  $row[0]" ?></td></tr>
                       <tr><td><strong>Modelo:</strong></td><td><?php echo "  $row[2]" ?></td></tr>
@@ -70,13 +69,9 @@
                    ?>
 
 <form action="modificar_equipo.php" method="post" enctype="multipart/form-data" name="form2" id="form2" onSubmit="return validar2()"  >
-
-<br>   
- 
-<p align="center" class="Estilo3"><strong>MODIFICAR EQUIPO</strong></p>
-
-<div align="center"><br>
-    <br>
+ <br>
+<div align="center">
+   
   
     <table  width="772" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
       <tr>
@@ -163,45 +158,28 @@
         </div></td>
       </tr>
     </table>
-  <br>
-  <br>
-    <strong> </strong>
-    <br>
-    <br>
-  
-  <br>
-  <br>
-  
-  
- 
-  
-  
-  
-  
-    </table>
- 
-<br><br>
+
+<br>
 <strong>FOTO DEL EQUIPO</strong>
 <br>
-<br>
+
 <strong><a href="modificar_foto_equipo.php?id_equipo=<?php echo $id_equipo?>">Si desea Modificar la Foto pulse aqui</a></strong>
-<br><br>
+
 
   
  <input type="hidden" name="id_equipo" id="id_equipo" value="<?php echo $id_equipo ?>"> 
 
 <tr><td colspan="2"><strong><br><br>Presione el botón continuar para guardar los cambios</strong></td></tr>
 <br>
-<br>
 
-<br>
 <tr><td colspan="2"><center><br><input name="submit" type="submit" value="Continuar"></center></td></tr>
 
 </form>
 </center>
 </table>
 
-<?php
+    <p>
+      <?php
 
                    }
                    mysql_free_result($resultado);
@@ -210,7 +188,9 @@
 
 
                    ?>
-
-
+      </p>
+    <p>&nbsp;
+        </p>
+</div>
 </body>
 </html>

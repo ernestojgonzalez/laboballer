@@ -16,7 +16,6 @@ $enlace =conectarbase();
 $nombre_equipo=strtoupper($nombre_equipo);
 $nombre_parte=strtoupper($nombre_parte);
 $codigo_parte=strtoupper($codigo_parte);
-$cantidad_parte=strtoupper($cantidad_parte);
 $piezas=strtoupper($piezas);
 
              $Insertar= "INSERT INTO partepieza VALUES('NULL','$nombre_equipo','$piezas','$codigo_parte','$nombre_parte','$cantidad_parte')";

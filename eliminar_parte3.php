@@ -8,11 +8,11 @@
 
  <?php
   include "coneccionbasedatosmysql.inc";
-    $nombre_equipo = $_POST['nombre_equipo'];
+    $codigo_parte = $_POST['codigo_parte'];
 	//declarando la variable $registro
 	$enlace =conectarbase();
 	// $enlace se iguala a la funcion cenectarbase()
- $Eliminar = "DELETE FROM partepieza WHERE nombre_equipo = '$nombre_equipo'";
+ $Eliminar = "DELETE FROM partepieza WHERE codigo_parte = '$codigo_parte'";
  $resultado=basedatos($Eliminar);
  echo "<center><table><tr><td><BR><p><strong><center>Las partes del equipo fué eliminado</center></strong></p><BR></td></tr></table></center>";
  mysql_close ($enlace);

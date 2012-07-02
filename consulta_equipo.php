@@ -76,7 +76,7 @@
        	echo "<td><center>$row[7]</td>";
        	echo "<td><center>$row[8]</td>";	
 		echo "<td><a target=_blank href='$link2'>$row[9]</a></td>";
-      	
+      	echo "<td><img src='$row[9]' width='100'height='100'></td>";
 	   $i=$i+1;
 
        if (($i%1)==0)

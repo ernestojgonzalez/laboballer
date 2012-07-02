@@ -47,6 +47,7 @@
       </tr>
     </table>
   <br>
+  <input name="nombre_equipo2" type="text" id="nombre_equipo2" />
   <br>
   
     <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">

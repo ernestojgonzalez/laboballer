@@ -2,4 +2,5 @@
 <info>
 	<infoitem key="UD_nueva" value="name:nombre_equipo;datatype:string" />
 	<infoitem key="UD_odt" value="name:cedula;datatype:int,name:nombre;datatype:string,name:apellido;datatype:string,name:cargo;datatype:string,name:telefono;datatype:string,name:direccion;datatype:string,name:sexo;datatype:string,name:fecha;datatype:string,name:horario;datatype:string,name:archivo;datatype:string,name:titulo;datatype:string" />
+	<infoitem key="UD_odt2" value="name:codigo_equipo;datatype:string,name:nombre_equipo;datatype:string,name:modelo;datatype:string,name:marca;datatype:string,name:descripcion;datatype:string,name:herramienta;datatype:string,name:estado;datatype:string,name:cantidad;datatype:string,name:fecha;datatype:string,name:archivo;datatype:string,name:titulo;datatype:string,name:id_equipo;datatype:int" />
 </info>

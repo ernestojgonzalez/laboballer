@@ -13,7 +13,7 @@
 <p> ESTA CONSULTA PUEDE SER POR; </p>
 <table width="173" height="44" border="1" bordercolor="CCCCCC">
 <TR>
-<td height="38"> <div align="center">Nombre del equipo</div></td>
+<td height="38"> <div align="center">Código de la parte del Equipo</div></td>
 </TR>
 </table>
 
@@ -21,7 +21,7 @@
     <table width="250" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
 <tr>
   <td width="98"><strong>Criterio de Búsqueda</strong></td>
-  <td width="136"><input type="text" size="20" name="nombre_equipo" id="nombre_equipo"></td>
+  <td width="136"><input type="text" size="20" name="codigo_parte" id="codigo_parte"></td>
 
 </tr>
 </table>

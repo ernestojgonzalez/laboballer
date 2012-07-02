@@ -8,12 +8,12 @@
 <div align="center">
     <?php
     include "coneccionbasedatosmysql.inc";
-    $nombre_equipo = $_POST['nombre_equipo'];
+    $codigo_parte = $_POST['codigo_parte'];
 //declarando la variable $criterio
 	$enlace =conectarbase();
 // $enlace se iguala a la funcion cenectarbase()
 
-   $consulta = "SELECT * from partepieza where nombre_equipo = '$nombre_equipo';";
+   $consulta = "SELECT * from partepieza where codigo_parte = '$codigo_parte';";
    	
                    $resultado=basedatos($consulta);
                    $nro_fil = mysql_num_rows($resultado);
@@ -21,7 +21,7 @@
                    if($nro_fil == 0)
                    {
 
-                   echo "<center><table><tr><td><br><br><strong><center>El equipo $nombre_equipo no existe.</center></strong></td></tr></table></center>";
+                   echo "<center><table><tr><td><br><br><strong><center>La parte del equipo $codigo_parte no existe.</center></strong></td></tr></table></center>";
                    }else
                    {
                    while ($row = mysql_fetch_row($resultado)){
@@ -58,7 +58,7 @@
 <!--* se llama al archivo eliminarinforme3.php*-->
 <form action="eliminar_parte3.php" method="post" name="form1" id="form1">
 <br>
-<tr><td colspan="2"><center><br><input type="hidden" name="nombre_equipo" id="nombre_equipo" value="<?php echo $nombre_equipo ?>"><input name="submit" type="submit" value="Continuar"></center></td></tr>
+<tr><td colspan="2"><center><br><input type="hidden" name="codigo_parte" id="codigo_parte" value="<?php echo $codigo_parte ?>"><input name="submit" type="submit" value="Continuar"></center></td></tr>
 
 </form>
 </center>

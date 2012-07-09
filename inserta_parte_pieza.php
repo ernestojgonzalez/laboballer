@@ -76,14 +76,8 @@
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<p>&nbsp;</p><p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">

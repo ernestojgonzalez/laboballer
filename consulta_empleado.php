@@ -94,14 +94,10 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
+
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -127,7 +123,7 @@
 
 	}
 
-	$hasta=30;
+	$hasta=10;
 
 	$desde=($hasta*$pag)-$hasta;
 
@@ -145,9 +141,8 @@
 
 <table width="630"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
 <CAPTION><strong>
-<p>&nbsp;</p>
+
 <p>CONSULTA GENERAL</p>
-<p>&nbsp;</p>
 <p></strong></CAPTION>
 
 
@@ -178,7 +173,7 @@
 		echo "<td><center>$row[6]</td>";
        	echo "<td><center>$row[7]</td>";
        	echo "<td><center>$row[8]</td>";	
-		echo "<td><a target=_blank href='$link2'>$row[9]</a></td>";
+		echo "<td><a target=_blank href='$link2'><img src='$row[9]' width='120'height='100'></a></td>";
       	
 	   $i=$i+1;
 

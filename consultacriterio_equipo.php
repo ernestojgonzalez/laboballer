@@ -77,30 +77,22 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
                               <br><br>
 <center>
-<strong>CONSULTA POR CRITERIO</strong>
-<br>
 <br><br>
 <p> ESTA CONSULTA PUEDE SER POR; </p>
-<table width="173" height="99" border="1" bordercolor="CCCCCC">
+<table width="180" height="76" border="1" bordercolor="CCCCCC">
 <TR>
 <td width="85"> <div align="center">Nombre</div></td>
-<td width="72"> <div align="center">Código</div></td>
+<td width="72"> <div align="center">Marca</div></td>
 </TR>
 <TR>
-<td> <div align="center">Fecha de ingreso</div></td>
+<td height="36"> <div align="center">Ano de ingreso</div></td>
 <td> <div align="center">Estado</div></td>
 </TR>
 </table>

@@ -77,14 +77,8 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -97,7 +91,6 @@ $codigo_equipo=$_POST['codigo_equipo'];
 $modelo=$_POST['modelo'];
 $marca=$_POST['marca'];
 $descripcion=$_POST['descripcion'];
-$herramienta=$_POST['herramienta'];
 $fecha=$_POST['fecha'];
 $estado=$_POST['estado'];
 $cantidad=$_POST['cantidad'];
@@ -125,7 +118,7 @@ else
 // funcion para almacenar el archivo en el servidor
    if (move_uploaded_file($_FILES['archivo']['tmp_name'], "rutas/$nombre_archivo2"))
    {
-      echo "<BR><p><strong><center>Datos Correctos</center></strong></p><BR>";
+      echo "<BR><strong><center>Datos Correctos</center></strong><BR>";
       if($nro_fil == 0)
            {
              $ruta = "rutas/$nombre_archivo2";
@@ -140,20 +133,19 @@ $modelo=strtoupper($modelo);
 $titulo=strtoupper($titulo);
 $marca=strtoupper($marca);
 $descripcion=strtoupper($descripcion);
-$herramienta=strtoupper($herramienta);
 $estado=strtoupper($estado);
 
 
 
 // funcion para insertar los ddatos en la tabla informe
-             $Insertar= "INSERT INTO equipo VALUES('$codigo_equipo','$nombre_equipo','$modelo','$marca','$descripcion','$herramienta','$estado','$cantidad','$fecha','$ruta','$titulo',NULL)";
+             $Insertar= "INSERT INTO equipo VALUES('$codigo_equipo','$nombre_equipo','$modelo','$marca','$descripcion','$estado','$cantidad','$fecha','$ruta','$titulo',NULL)";
              $resultadoins=basedatos($Insertar);
-             echo "<tr><td><BR><p><strong><center>La Información fue registrada satisfactoriamente</center></strong></p><BR></td></tr>";
+             echo "<tr><td><BR><strong><center>La Información fue registrada satisfactoriamente</center></strong><BR></td></tr>";
            }
        mysql_close ($enlace);
    }else
     {
-      echo "Ocurrió algún error al subir el fichero. No pudo guardarse.";
+      echo "Ocurrió algún error. No pudo guardarse.";
     }
 }
 ?>

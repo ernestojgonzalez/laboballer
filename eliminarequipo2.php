@@ -88,13 +88,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -114,25 +108,24 @@
                    if($nro_fil == 0)
                    {
 
-                   echo "<center><table><tr><td><br><br><strong><center>El equipo $codigo_equipo no existe.</center></strong></td></tr></table></center>";
+                   echo "<center><br><strong><center>El equipo $codigo_equipo no existe.</center></strong></center>";
                    }else
                    {
                    while ($row = mysql_fetch_row($resultado)){
                    $registro=$row[0];	   
                    ?>
 
-<strong>ELIMINAR EQUIPO</strong>
+<strong><center>ELIMINAR EQUIPO</strong>
 <br>
-<br><table width="400" border="8" bordercolor="#CCCCCC">
+<br><table width="400" border="8" bordercolor="#CCCCCC" align="center">
                        <tr><td><strong>Nombre del equipo:</strong></td><td><?php echo "  $row[1]" ?></td></tr>
                       <tr><td><strong>Código del equipo:</strong></td><td><?php echo "  $row[0]" ?></td></tr>
                       <tr><td><strong>Modelo:</strong></td><td><?php echo "  $row[2]" ?></td></tr>
                       <tr><td><strong>Marca:</strong></td><td><?php echo "$row[3]" ?></td></tr>
                       <tr><td><strong>Descripción:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
-                      <tr><td><strong>Herramientas:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
-					  <tr><td><strong>estado:</strong></td><td><?php echo "  $row[6]" ?></td></tr>
-					  <tr><td><strong>Cantidad:</strong></td><td><?php echo "  $row[7]" ?></td></tr>
-                      <tr><td><strong>Fecha de ingreso del sistema:</strong></td><td><?php echo "  $row[8]" ?></td></tr>			                    <?php   $row[11] ?>
+					  <tr><td><strong>estado:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
+					  <tr><td><strong>Cantidad:</strong></td><td><?php echo "  $row[6]" ?></td></tr>
+                      <tr><td><strong>Fecha de ingreso del sistema:</strong></td><td><?php echo "  $row[7]" ?></td></tr>			                    <?php   $row[10] ?>
 					   <?php
                    }
                    ?>

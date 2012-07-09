@@ -77,13 +77,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -129,15 +123,16 @@
 <center>
 <CAPTION><strong>CONSULTA POR CRITERIO</strong></CAPTION>
 <p>&nbsp;</p>
-<table width="850"  border="1" class="tabla1"/>
+<table width="600"  border="1" class="tabla1"/>
 
    <TR bgcolor="#E4E4E7">
 
 	<TH>Equipo</TH>
-	<TH>Parte de la pieza</TH>
-	<TH>Código de la pieza</TH>
+	<TH>Parte del Equipo</TH>
+	<TH>Código de la parte</TH>
 	<TH>Cantidad</TH>
-	<TH>Piezas</TH>
+	<TH>Pieza que tiene la parte del equipo</TH>
+	
   </tr>
 	<?PHP
 		$i=0;
@@ -145,8 +140,8 @@
     {
 
        echo "<td>$row[1]</td>";
-       	echo "<td>$row[3]</td>";
        	echo "<td>$row[4]</td>";
+       	echo "<td>$row[3]</td>";
 		echo "<td>$row[5]</td>";
 		echo "<td>$row[2]</td>";
 

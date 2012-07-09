@@ -97,14 +97,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -136,14 +129,13 @@
                    $modelo=$row[2];
                    $marca=$row[3];
                    $descripcion=$row[4];
-                   $herramienta=$row[5];
-                   $estado=$row[6];
-                   $cantidad=$row[7];
-				   $fecha=$row[8];
-                   $titulo=$row[10];
-				   $id_equipo=$row[11];           
+                   $estado=$row[5];
+                   $cantidad=$row[6];
+				   $fecha=$row[7];
+                   $titulo=$row[9];
+				   $id_equipo=$row[10];           
 
-				   $link2=$row[9];
+				   $link2=$row[8];
                    ?>
       <strong>MODIFICAR EQUIPO</strong>    </p>
     <table width="400" border="8" bordercolor="#CCCCCC">
@@ -204,9 +196,9 @@
           <textarea rows="2" cols="20" name="descripcion" id="descripcion"><?php echo $descripcion ?></textarea>
 
         </div></td> 
-        <td width="92"><div align="center"><strong>Herramientas </strong></div></td>
+        <td width="92"><div align="center"><strong>Cantidad </strong></div></td>
         <td width="150"><div align="center">
-          <input name="herramienta" type="text" id="herramienta"  value="<?php echo $herramienta ?>"/>
+          <input name="cantidad" type="text" id="cantidad" size="5"  value="<?php echo $cantidad ?>" />
         </div></td> 
       </tr>
     </table>
@@ -237,9 +229,9 @@
 				</script>
         </div></td>
         <!-- combo 1 municipio -->
-        <td width="100"><div align="center"><strong>Cantidad </strong></div></td>
+        <td width="100"><div align="center"><strong>&nbsp; </strong></div></td>
         <td width="144"><div align="center">
-          <input name="cantidad" type="text" id="cantidad" size="5"  value="<?php echo $cantidad ?>" />
+          
         </div></td>
         <td width="96"><div align="center"><strong>Estato del equipo </strong></div></td>
         <td width="149"><div align="center">

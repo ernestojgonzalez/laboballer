@@ -88,29 +88,22 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
 <?php
 // declaracion de variables
-$nombre_equipo=$_POST['nombre_equipo'];
-$codigo_equipo=$_POST['codigo_equipo'];
-$modelo=$_POST['modelo'];
-$marca=$_POST['marca'];
-$descripcion=$_POST['descripcion'];
-$herramienta=$_POST['herramienta'];
+$cedula=$_POST['cedula'];
+$nombre=$_POST['nombre'];
+$apellido=$_POST['apellido'];
+$sexo=$_POST['sexo'];
+$telefono=$_POST['telefono'];
+$direccion=$_POST['direccion'];
 $fecha=$_POST['fecha'];
-$estado=$_POST['estado'];
-$cantidad=$_POST['cantidad'];
-$id_equipo=$_POST['id_equipo'];
+$horario=$_POST['horario'];
+$cargo=$_POST['cargo'];
 
 $nro_fil = 0;
 
@@ -128,21 +121,19 @@ $enlace =conectarbase();
  //COLOCA CONTENIDO EN MAYUSCULA
 
 
-$nombre_equipo=strtoupper($nombre_equipo);
-$codigo_equipo=strtoupper($codigo_equipo);
-$modelo=strtoupper($modelo);
-
-$marca=strtoupper($marca);
-$descripcion=strtoupper($descripcion);
-$herramienta=strtoupper($herramienta);
-$estado=strtoupper($estado);
+$nombre=strtoupper($nombre);
+$apellido=strtoupper($apellido);
+$sexo=strtoupper($sexo);
+$direccion=strtoupper($direccion);
+$cargo=strtoupper($cargo);
+$horario=strtoupper($horario);
             
-			$Insertar= "UPDATE equipo SET  nombre_equipo='$nombre_equipo',codigo_equipo='$codigo_equipo',modelo='$modelo',marca='$marca',descripcion='$descripcion',herramienta='$herramienta',fecha='$fecha',estado='$estado',cantidad='$cantidad' WHERE id_equipo = '$id_equipo' ";
+			$Insertar= "UPDATE empleado SET  cedula='$cedula',nombre='$nombre',apellido='$apellido',cargo='$cargo',telefono='$telefono',direccion='$direccion',sexo='$sexo',fecha='$fecha',horario='$horario' WHERE cedula = '$cedula' ";
 			
 			 		 
 			 
              $resultadoins=basedatos($Insertar);
-             echo "<table align=center id='background-image'><tr><td><BR><p><strong><center>Los Datos fueron modificados exitosamente</center></strong></p><BR></td></tr></table>";
+             echo "<BR><p><strong><center>Los Datos fueron modificados exitosamente</center></strong></p><BR>";
 
        mysql_close ($enlace);
    

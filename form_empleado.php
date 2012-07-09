@@ -90,19 +90,16 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
+              
                                 
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
  <form method="post" name="form1" id="form1" enctype="multipart/form-data" action="inserta_empleado.php" onSubmit="return validar()">
-<br>   
+ 
  
 <p align="center" class="Estilo3"><strong>REGISTRO DE EMPLEADO</strong> 
  
@@ -120,13 +117,13 @@
           </div>
         </label></td>
         <td width="100"><div align="center">
-          <p><strong>Apellido </strong><strong>del empleado </strong></p>
+          <strong>Apellido </strong><strong>del empleado </strong>
         </div></td>
         <td width="144"><div align="center">
           <input name="apellido" type="text" id="apellido" />
         </div></td>
         <td width="94"><div align="center">
-          <p><strong> Cédula    </strong><strong>del empleado </strong></p>
+         <strong> Cédula    </strong><strong>del empleado </strong>
           </div></td>
         <td width="150"><div align="center">
           <input name="cedula" type="text" id="cedula" />

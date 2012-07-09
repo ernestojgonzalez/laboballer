@@ -77,13 +77,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -116,7 +110,7 @@
 	$hasta=10000000;
 	$desde=($hasta*$pag)-$hasta;
 // consulta a la tabla informe_personal	
-	$consulta="SELECT * FROM equipo where match (nombre_equipo,codigo_equipo,fecha,estado) against ('$criterio*' IN BOOLEAN MODE) order by fecha LIMIT $desde, $hasta";
+	$consulta="SELECT * FROM equipo where match (nombre_equipo,marca,fecha,estado) against ('$criterio*' IN BOOLEAN MODE) order by fecha LIMIT $desde, $hasta";
 	$resultado=mysql_query($consulta,$enlace);
 
 
@@ -125,16 +119,14 @@
 <center>
 <CAPTION><strong>CONSULTA POR CRITERIO</strong></CAPTION>
 <p>&nbsp;</p>
-<table width="850"  border="1" class="tabla1"/>
+<table width="600"  border="1" class="tabla1"/>
 
    <TR bgcolor="#E4E4E7">
 
 	<TH>Fecha</TH>
-	<TH>Código del equipo</TH>
-	<TH>Nombre del equpio</TH>
+	<TH>Equipo</TH>
 	<TH>Modelo</TH>
 	<TH>Marca</TH>
-	<TH>Herramienta</TH>
 	<TH>Estato</TH>
     <TH>Cantidad</TH>
     <TH>Foto</TH>
@@ -143,17 +135,15 @@
 		$i=0;
 		while ($row = mysql_fetch_row($resultado))
     {
-       $link2 =$row[9];
+       $link2 =$row[8];
         
-		echo "<td>$row[8]</td>";
-       	echo "<td>$row[0]</td>";
-       	echo "<td>$row[1]</td>";
-		echo "<td>$row[2]</td>";
-		echo "<td>$row[3]</td>";
-       	echo "<td>$row[5]</td>";
-       	echo "<td>$row[6]</td>";
 		echo "<td>$row[7]</td>";
-		echo "<td><a target=_blank href='$link2'>$row[9]</a></td>";
+       	echo "<td><center>$row[0]<br>$row[1]</td>";
+		echo "<td><center>$row[2]</td>";
+		echo "<td><center>$row[3]</td>";
+       	echo "<td><center>$row[5]</td>";
+		echo "<td><center>$row[6]</td>";
+		echo "<td><a target=_blank href='$link2'><img src='$row[8]' width='120'height='100'></a></td>";
 
 	   $i=$i+1;
 

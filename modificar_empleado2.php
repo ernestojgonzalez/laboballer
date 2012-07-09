@@ -97,14 +97,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -148,7 +141,9 @@
 				   $link2=$row[9];
                    ?>
      
-      <table width="400" border="8" bordercolor="#CCCCCC">
+      <div align="center">
+	  <strong>MODIFICAR EMPLEADO</strong>
+	  <table width="400" border="8" bordercolor="#CCCCCC" align="center">
         <tr><td><strong>Nombre del empleado:</strong></td><td><?php echo "  $row[1]" ?></td></tr>
         <tr>
           <td><strong>Apellido </strong><strong>del empleado:</strong></td>
@@ -160,8 +155,7 @@
         <tr><td><strong>Fecha de Ingreso:</strong></td><td><?php echo "  $row[7]" ?></td></tr>
         <tr><td><strong>Horario de Trabajo:</strong></td><td><?php echo "  $row[8]" ?></td></tr>
         <tr><td><strong>Cargo:</strong></td><td><?php echo "  $row[3]" ?></td></tr>			  
-        <tr><td><strong>Foto del Empleado:</strong></td><td><?php echo "<a href='$link2'>$row[9]</a>" ?></td></tr><br />
-        
+        <tr><td><strong>Foto del Empleado:</strong></td><td><?php echo "<a href='$link2'>$row[9]</a>" ?></td></tr><br /> </table>        
         <?php
                    }
                    ?>
@@ -169,27 +163,27 @@
  <form action="modificar_empleado.php" method="post" enctype="multipart/form-data" name="form2" id="form2" onSubmit="return validar2()"  >
   
         
-  <p align="center" class="Estilo3"><strong>MODIFICAR EMPLEADO</strong></p>
+  
     
         <table  width="772" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
           <tr>
-            <td width="100"><div align="center"><strong>Nombre del Empleado </strong></div></td>
-          <td width="144"><label>
+            <td width="114"><div align="center"><strong>Nombre del Empleado </strong></div></td>
+          <td width="141"><label>
             <div align="center">
-              <input name="nombre" type="text" id="nombre"  value="<?php echo $nombre?>" />
+              <input name="nombre" type="text" id="nombre"  value="<?php echo $nombre?>" size="20" />
             </div>
           </label></td>
-          <td width="100"><div align="center">
-            <p><strong>Apellido del Empleado </strong></p>
+          <td width="103"><div align="center">
+            <strong>Apellido del Empleado </strong>
           </div></td>
-          <td width="144"><div align="center">
-            <input name="apellido" type="text" id="apellido"  value="<?php echo $apellido ?>" />
+          <td width="154"><div align="center">
+            <input name="apellido" type="text" id="apellido"  value="<?php echo $apellido ?>" size="20" />
             </div></td>
-          <td width="94"><div align="center">
-            <p><strong>Cedula</strong> </p>
+          <td width="84"><div align="center">
+            <strong>Cedula</strong> 
             </div></td>
-          <td width="150"><div align="center">
-            <input name="cedula" type="text" id="cedula"  value="<?php echo $cedula ?>" />
+          <td width="136"><div align="center">
+            <input name="cedula" type="text" id="cedula"  value="<?php echo $cedula ?>" size="13" />
             </div></td>
         </tr>
         </table>
@@ -198,24 +192,24 @@
         
         <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
           <tr>
-            <td width="99"><div align="center"><strong>Sexo</strong></div></td>
-          <td width="144"><div align="center">
+            <td width="114"><div align="center"><strong>Sexo</strong></div></td>
+          <td width="141"><div align="center">
             <select name="sexo" id="sexo">
 		      <option selected><?php echo $sexo ?></option>
 		      <option value="masculino">Masculino</option>
 		      <option value="femenino">femenino</option>
 	        </select>
 			            </div></td>
-          <td width="102"><div align="center"><strong>Telefono</strong></div></td>
-          <td width="145"><div align="center">
+          <td width="103"><div align="center"><strong>Telefono</strong></div></td>
+          <td width="154"><div align="center">
             <label for="textarea"></label>
              <input name="telefono" type="text" id="telefono"  value="<?php echo $telefono ?>"/>
 			
             
             </div></td> 
-          <td width="92"><div align="center"><strong>Direccion </strong></div></td>
-          <td width="150"><div align="center">
-            <textarea rows="2" cols="20" name="direccion" id="direccion"><?php echo $direccion ?></textarea>
+          <td width="84"><div align="center"><strong>Direccion </strong></div></td>
+          <td width="136"><div align="center">
+            <textarea rows="2" cols="10" name="direccion" id="direccion"><?php echo $direccion ?></textarea>
             </div></td> 
         </tr>
         </table>

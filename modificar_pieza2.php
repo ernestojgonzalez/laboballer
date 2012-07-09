@@ -8,13 +8,8 @@ $totalRows_nueva = mysql_num_rows($nueva);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>INSERTA PIEZAS Y PARTES</title>
-<!-- plantilla  -->
-    <meta name="description" content="Description" />
-    <meta name="keywords" content="Keywords" />
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-<!-- fin plantilla  -->
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
+<title>LABOBALLER</title>
 <style type="text/css">
 @import url(calendario/calendar-blue.css);</style>
 <script type="text/javascript" src="calendario/calendar.js"></script>
@@ -22,10 +17,28 @@ $totalRows_nueva = mysql_num_rows($nueva);
 <script type="text/javascript" src="calendario/calendar-setup.js"></script>
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="jquery.js"></script>
-<script language="javascript" src="validacion.js"></script>  
+<script language="javascript" src="validacion.js"></script> 
+
+  <!-- plantilla  --> 
+	<meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />    
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<!-- fin plantilla  -->
+   
+
+    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 <!--INICIO DE LA PLANTILLA -->
+<!-- plantilla  --> 
+	<meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />    
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<!-- fin plantilla  -->
 <div id="art-page-background-glare">
     <div id="art-page-background-glare-image"> </div>
 </div>
@@ -94,9 +107,59 @@ $totalRows_nueva = mysql_num_rows($nueva);
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
                 <div class="cleared"></div>
         <div class="art-postcontent">
-<!-- fin LA Plantiila -->
+<!-- EMPIEZA LA PAG -->
 
- <form method="post" name="form1" id="form1" enctype="multipart/form-data" action="inserta_parte_pieza.php" onSubmit="return validar()">
+    <div align="center">
+      <?php
+    include "coneccionbasedatosmysql.inc";
+    $criterio = $_POST['criterio'];
+	//declarando la variable $criterio
+	$enlace =conectarbase();
+	// $enlace se iguala a la funcion cenectarbase()
+  
+    
+   $consulta = "SELECT * from partepieza where codigo_parte = '$criterio';";
+  
+  
+ //  $consulta = "SELECT * from empleado where codigo_equipo = '$criterio';";
+  // consulta a la tabla informe_personal
+                   $resultado=basedatos($consulta);
+                   $nro_fil = mysql_num_rows($resultado);
+
+                   if($nro_fil == 0)
+                   {
+
+                   echo "<center><br><br><strong><center>El codigo $criterio no existe en nuestra base de datos <br> por favor valide sus datos.</center></strong></center><br></br><br></br>";
+                   }else
+                   {
+                   while ($row = mysql_fetch_row($resultado)){
+				   $id_parte_pieza=$row[0];
+                   $nombre_equipo=$row[1];
+                   $piezas=$row[2];
+                   $codigo_parte=$row[3];
+                   $nombre_parte=$row[4];
+                   $cantidad_parte=$row[5];
+          
+
+				  
+                   ?>
+     
+      <div align="center">
+	  <strong>MODIFICAR PARTE DEL EQUIPO</strong>
+	  <table width="400" border="8" bordercolor="#CCCCCC" align="center">
+        <tr><td><strong>Nombre de equipo:</strong></td><td><?php echo "  $row[1], $row[0]" ?></td></tr>
+        <tr>
+          <td><strong>Nombre de la Parte </strong><strong>del empleado:</strong></td>
+          <td><?php echo "  $row[4]" ?></td></tr>
+        <tr><td><strong>codigo de la parte    </strong><strong>del empleado:</strong></td><td><?php echo "  $row[3]" ?></td></tr>
+        <tr><td><strong>Cantidad</strong></td><td><?php echo "$row[5]" ?></td></tr>
+        <tr><td><strong>Piezas del equipo</strong></td><td><?php echo "  $row[2]" ?></td></tr>
+         </table>        
+        <?php
+                   }
+                   ?>
+        
+<form method="post" name="form1" id="form1" enctype="multipart/form-data" action="modificar_pieza1.php" onSubmit="return validar()">
 <br>   
  
 <p align="center" class="Estilo3"><strong>REGISTRO</strong></p>
@@ -145,7 +208,7 @@ do {
       <td width="110"><div align="center"><strong>Nombre</strong></div></td>
       <td width="144"><label> </label>
           <div align="center">
-            <input name="nombre_parte" type="text" id="nombre_parte" />
+            <input name="nombre_parte" type="text" id="nombre_parte" value="<?php echo $nombre_equipo ?>" />
         </div></td>
       <td width="95"><div align="center">
           <p>&nbsp;</p>
@@ -155,7 +218,7 @@ do {
   <td width="110"><div align="center"><strong>Código</strong></div></td>
       <td width="144"><label> </label>
           <div align="center">
-            <input name="codigo_parte" type="text" id="codigo_parte" />
+            <input name="codigo_parte" type="text" id="codigo_parte" value="<?php echo $codigo_parte ?>" />
         </div></td>
     <td width="95" bgcolor="#BDBDBD"><div align="center">
           <p>&nbsp;</p>
@@ -164,7 +227,7 @@ do {
         <div align="center">
             <p>
               <label>
-              <textarea name="piezas" cols="40" id="piezas"></textarea>
+			  <textarea rows="2" cols="20" name="piezas" id="piezas"><?php echo $piezas ?></textarea>
               </label>
             </p>
         </div>
@@ -174,7 +237,7 @@ do {
       <td width="100"><div align="center"><strong>Cantidad</strong></div></td>
       <td width="156"><label>
           <div align="center">
-            <input name="cantidad_parte" type="text" id="cantidad_parte" />
+            <input name="cantidad_parte" type="text" id="cantidad_parte" value="<?php echo $cantidad_parte ?>" />
           </div>
         </label></td>
       <td width="88"><div align="center">
@@ -185,12 +248,23 @@ do {
   </table>
   <p>
     </table>
-	
-    <input name="id_parte_pieza" type="hidden" value="id_parte_pieza" />
+	 <input type="hidden" name="id_parte_pieza" id="id_parte_pieza" value="<?php echo $id_parte_pieza ?>">
     <input name="submit" type="submit" value="Guardar">
 </p>
   </div>
  </form>
+      </center>
+      </table>
+
+      <?php
+
+                   }
+                   mysql_free_result($resultado);
+                   mysql_close ($enlace);
+
+
+
+                   ?>
 
 </body>
 </html>

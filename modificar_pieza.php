@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>ELIMINAR EMPLEADO</title>
-    <!-- plantilla  --> 
+<title>LABOBALLER</title>
+   <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
@@ -87,32 +87,30 @@
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
 <p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
- <?php
-  include "coneccionbasedatosmysql.inc";
-    $cedula = $_POST['cedula'];
-	//declarando la variable $registro
-	$enlace =conectarbase();
-	// $enlace se iguala a la funcion cenectarbase()
- $Eliminar = "DELETE FROM empleado WHERE cedula = '$cedula'";
- $resultado=basedatos($Eliminar);
- echo "<center><BR><p><strong><center>El empleado fué eliminado</center></strong></p><BR></center><br></br><br></br>";
- mysql_close ($enlace);
- ?>
+<form action="modificar_pieza2.php" method="post" name="form1" id="form1">
+<div align="center">
+<br/><br/>
+<table width="200" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+<tr>
+  <td width="80"><strong><div align="center">Codigo de la parte del equipo</div></strong></td>
+  <td><div align="center"><input type="text" size="10" name="criterio" id="criterio"></div></td>
+
+</tr>
+</table>
+<br>
+<input name="submit" type="submit" value="Buscar">
+</div>
+</form>
 <!-- FINALIZA LA PAG -->
 <!-- PIE DE PAG -->
-         </div>       <div class="cleared"></div>
+                </div> <div class="cleared"></div>
                 </div>
 
 		<div class="cleared"></div>

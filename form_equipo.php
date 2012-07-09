@@ -86,14 +86,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -102,8 +95,7 @@
  
 <p align="center" class="Estilo3"><strong>REGISTRO DE EQUIPO</strong></p>
 
-<div align="center"><br>
-    <br>
+<div align="center">
   
     <table  width="772" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
       <tr>
@@ -114,13 +106,13 @@
           </div>
         </label></td>
         <td width="100"><div align="center">
-          <p><strong>Código del equipo </strong></p>
+          <strong>Código del equipo </strong>
         </div></td>
         <td width="144"><div align="center">
           <input name="codigo_equipo" type="text" id="codigo_equipo" />
         </div></td>
         <td width="94"><div align="center">
-          <p><strong>Modelo</strong> </p>
+          <strong>Modelo</strong> 
           </div></td>
         <td width="150"><div align="center">
           <input name="modelo" type="text" id="modelo" />
@@ -128,23 +120,23 @@
       </tr>
     </table>
   <br>
-  <input name="nombre_equipo2" type="text" id="nombre_equipo2" />
+
   <br>
   
     <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
       <tr>
-        <td width="99"><div align="center"><strong>Marca</strong></div></td>
-        <td width="144"><div align="center">
-          <input name="marca" type="text" id="marca" />
+        <td width="101"><div align="center"><strong>Marca</strong></div></td>
+        <td width="136"><div align="center">
+          <input name="marca" type="text" id="marca" size="20" />
         </div></td>
-        <td width="102"><div align="center"><strong>Descripción</strong></div></td>
-        <td width="145"><div align="center">
+        <td width="85"><div align="center"><strong>Descripción</strong></div></td>
+        <td width="162"><div align="center">
           <label for="textarea"></label>
-          <textarea name="descripcion" id="descripcion"></textarea>
+          <textarea name="descripcion" cols="15" id="descripcion"></textarea>
         </div></td>
-        <td width="92"><div align="center"><strong>Herramientas </strong></div></td>
-        <td width="150"><div align="center">
-          <input name="herramienta" type="text" id="herramienta" />
+        <td width="93"><div align="center"><strong>Cantidad </strong></div></td>
+        <td width="155"><div align="center">
+           <input name="cantidad" type="text" id="cantidad" size="5" />
         </div></td>
       </tr>
     </table>
@@ -156,7 +148,7 @@
         <?php // formato de la fecha ano, mes y dia
               $hoy=date("Y-m-d");
             ?>
-        <td width="144"><div align="center">
+        <td width="151"><div align="center">
           <input type="text" id="fecha1" name="fecha" size="10" onkeypress="return nonumeyletra(event)"readonly="readonly"/>
           <input type="image" src="calendario/calendario.gif" id="fecha" />
           <input type="hidden" name="fechatemp1" id="fechatemp" value="<?php echo $hoy?>" size="20" />
@@ -175,11 +167,9 @@
 				</script>
         </div></td>
         <!-- combo 1 municipio -->
-        <td width="100"><div align="center"><strong>Cantidad </strong></div></td>
-        <td width="144"><div align="center">
-          <input name="cantidad" type="text" id="cantidad" size="5" />
-        </div></td>
-        <td width="96"><div align="center"><strong>Estato del equipo </strong></div></td>
+        <td width="247"><div align="center"></div>          <div align="center">&nbsp;      
+          </div></td>
+        <td width="92"><div align="center"><strong>Estato del equipo </strong></div></td>
         <td width="149"><div align="center">
           <select name="estado" id="estado">
             <option selected="selected">Seleccionar</option>

@@ -88,13 +88,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -107,7 +101,7 @@
 	// $enlace se iguala a la funcion cenectarbase()
  $Eliminar = "DELETE FROM partepieza WHERE codigo_parte = '$codigo_parte'";
  $resultado=basedatos($Eliminar);
- echo "<center><table><tr><td><BR><p><strong><center>Las partes del equipo fué eliminado</center></strong></p><BR></td></tr></table></center>";
+ echo "<center><BR><p><strong><center>Las partes del equipo fué eliminado</center></strong></p><BR></center>";
  mysql_close ($enlace);
  ?>
 <!-- FINALIZA LA PAG -->

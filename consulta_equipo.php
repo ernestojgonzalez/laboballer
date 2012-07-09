@@ -69,13 +69,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -118,22 +112,20 @@
 
 <center>
 
-<table width="630"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
+<table width="550"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
 <CAPTION><strong>
 <p>&nbsp;</p>
 <p>CONSULTA GENERAL</p>
-<p>&nbsp;</p>
+
 <p></strong></CAPTION>
 
 
   <TR>
 
-	<TH bgcolor="#E4E4E7" width="10">Nombre del Equipo</TH>
-	<TH bgcolor="#E4E4E7" width="130">Código del Equipo</TH>
+	<TH bgcolor="#E4E4E7" width="10">Equipo</TH>
 	<TH bgcolor="#E4E4E7" width="110">Modelo</TH>
 	<TH bgcolor="#E4E4E7" width="130">Marca</TH>
 	<TH bgcolor="#E4E4E7" width="130">Descripción</TH>
-    <TH bgcolor="#E4E4E7" width="90">Herramientas</TH>
 	<TH bgcolor="#E4E4E7" width="90">Estado del Equipo</TH>
 	<TH bgcolor="#E4E4E7" width="120">Cantidad</TH>
 	<TH bgcolor="#E4E4E7" width="120">Fecha de ingreso</TH>
@@ -145,20 +137,19 @@
 		while ($row = mysql_fetch_row($resultado))
     {
 
-        $link2 =$row[9];
+        $link2 =$row[8];
 
 
-        echo "<center><td>$row[1]</td>";
-		echo "<td><center>$row[0]</td>";
+        echo "<center><td>$row[1]<br>$row[0]</td>";
        	echo "<td><center>$row[2]</td>";
 		echo "<td><center>$row[3]</td>";
        	echo "<td><center>$row[4]</td>";
-       	echo "<td><center>$row[5]</td>";
-		echo "<td><center>$row[6]</td>";
-       	echo "<td><center>$row[7]</td>";
-       	echo "<td><center>$row[8]</td>";	
-		echo "<td><a target=_blank href='$link2'>$row[9]</a></td>";
-      	echo "<td><img src='$row[9]' width='100'height='100'></td>";
+		echo "<td><center>$row[5]</td>";
+       	echo "<td><center>$row[6]</td>";
+       	echo "<td><center>$row[7]</td>";	
+		echo "<td><a target=_blank href='$link2'><img src='$row[8]' width='120'height='100'></a></td>";	
+		//echo "<td><a target=_blank href='$link2'>$row[9]</a></td>";
+      	//echo "<td><img src='$row[9]' width='100'height='100'></td>";
 	   $i=$i+1;
 
        if (($i%1)==0)

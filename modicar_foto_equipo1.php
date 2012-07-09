@@ -88,13 +88,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -120,21 +114,21 @@ $enlace =conectarbase();
 //compruebo si las características del archivo son las que deseo
 if (!((strpos($tipo_archivo, "jpeg")) && ($tamano_archivo < 100000000)))
 {
-   echo "<table align=center><tr><td>La extensión o el tamano de los archivos no es correcta. <br><br><table><tr><td><li>Se permiten fotos con formato .jpg unicamente<br><li></td></tr></table>";
+   echo "<center>La extensión o el tamano de los foto no es correcta. <br><br>>Se permiten fotos con formato .jpg unicamente<br>";
 }
 else 
 {
 	// funcion para copiar el archivo en el servidor
    if (move_uploaded_file($_FILES['archivo']['tmp_name'], "rutas/$nombre_archivo2"))
    {
-      echo "<table  align=center><tr><td><BR><p><strong><center>El archivo ha sido Modificado correctamente</center></strong></p><BR></td></tr></table>";
+      echo "<BR><p><strong><center>El archivo ha sido Modificado correctamente</center></strong></p><BR>";
       if($nro_fil == 0)
            {
              $ruta = "rutas/$nombre_archivo2"; 
 			 // modifica la tabla cuando el nu de registro sea igual al num de registro recibido
              $Insertar= "UPDATE equipo SET titulo='$titulo', archivo='$ruta' WHERE $id_equipo=id_equipo";
              $resultadoins=basedatos($Insertar);
-             echo "<table id='background-image'  align=center><tr><td><BR><p><strong><center>Informe almacenado</center></strong></p><BR></td></tr></table>";
+             echo "<p><strong><center>Informe almacenado</center></strong></p>";
            }
        mysql_close ($enlace);
    }else

@@ -77,13 +77,8 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
+
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -126,7 +121,7 @@ else
 // funcion para almacenar el archivo en el servidor
    if (move_uploaded_file($_FILES['archivo']['tmp_name'], "rutas/$nombre_archivo2"))
    {
-      echo "<tr><td><BR><p><strong><center>Datos Correctos</center></strong></p><BR></td></tr></table>";
+      echo "<tr><td><BR><strong><center>Datos Correctos</center></strong><BR></td></tr></table>";
       if($nro_fil == 0)
            {
              $ruta = "rutas/$nombre_archivo2";
@@ -147,7 +142,7 @@ $horario=strtoupper($horario);
 // funcion para insertar los ddatos en la tabla informe_personal
              $Insertar= "INSERT INTO empleado VALUES('$cedula','$nombre','$apellido','$cargo','$telefono','$direccion','$sexo','$fecha','$horario','$ruta','$titulo')";
              $resultadoins=basedatos($Insertar);
-             echo "<BR><p><strong><center>La Información fue registrada satisfactoriamente</center></strong></p><BR></tr>";
+             echo "<BR><strong><center>La Información fue registrada satisfactoriamente</center></strong><BR></tr>";
            }
        mysql_close ($enlace);
    }else

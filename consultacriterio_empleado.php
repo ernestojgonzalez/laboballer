@@ -77,14 +77,8 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -93,9 +87,7 @@
 
                                <br><br>
 <center>
-<strong>CONSULTA POR CRITERIO</strong>
-<br>
-<br><br>
+
 <p> ESTA CONSULTA PUEDE SER POR; </p>
 <table width="173" height="99" border="1" bordercolor="CCCCCC">
 <TR>
@@ -103,11 +95,11 @@
 <td width="72"> <div align="center">Cédula</div></td>
 </TR>
 <TR>
-<td> <div align="center">Fecha de ingreso</div></td>
+<td> <div align="center">Ano de ingreso</div></td>
 <td> <div align="center">Cargo</div></td>
 </TR>
 <TR>
-<td> <div align="center">Sexoo</div></td>
+<td> <div align="center">Sexo</div></td>
 <td> <div align="center">Horario</div></td>
 </TR>
 </table>

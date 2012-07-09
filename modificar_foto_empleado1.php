@@ -107,14 +107,8 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -151,15 +145,11 @@ if (!$resultado)
    
 <form method="post" name="form1" id="form1" enctype="multipart/form-data" action="modicar_foto_empleado.php">
       
-	  <p>&nbsp;</p>
          <p align="center" class="Estilo3"><strong>MODIFICAR ARCHIVO</strong></p>
-
-
 <center>
+
 <br><br>
-<strong>ARCHIVO</strong>
-<br>
-<br>
+
 <table width="772" bgcolor="#BDBDBD">
 <tr>
   <td><strong>Título</strong></td>

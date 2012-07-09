@@ -88,18 +88,13 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-<div align="center">
+
+<div align="center"><strong>ELIMINAR PARTES DEL EQUIPO</strong>
     <?php
     include "coneccionbasedatosmysql.inc";
     $codigo_parte = $_POST['codigo_parte'];
@@ -115,14 +110,14 @@
                    if($nro_fil == 0)
                    {
 
-                   echo "<center><table><tr><td><br><br><strong><center>La parte del equipo $codigo_parte no existe.</center></strong></td></tr></table></center>";
+                   echo "<center><br><br><strong><center>La parte del equipo $codigo_parte no existe.</center></strong><</center>";
                    }else
                    {
                    while ($row = mysql_fetch_row($resultado)){
                    $registro=$row[0];	   
                    ?>
 
-<strong>ELIMINAR PARTES DEL EQUIPO</strong>
+
 <br>
 <br><table width="465" border="8" bordercolor="#CCCCCC">
         <tr><td width="219"><strong>Nombre del equipo</strong></td><td width="216"><?php echo "  $row[1]" ?></td></tr>  

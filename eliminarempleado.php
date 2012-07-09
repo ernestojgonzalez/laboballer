@@ -88,18 +88,12 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-<strong><center>ELIMINAR EMPLEADO</strong>
+<strong><center>ELIMINAR</strong>
 <br>
 <br>
 
@@ -107,7 +101,7 @@
 <div align="center">
 <table width="200" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
 <tr>
-  <td width="80"><div align="center"><strong>Cedula del elmpleado</strong></div></td>
+  <td width="80"><div align="center"><strong>Cedula del empleado</strong></div></td>
   <td><div align="center">
     <input type="text" size="10" name="cedula" id="cedula">
   </div></td>

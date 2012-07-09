@@ -88,14 +88,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -106,7 +99,6 @@ $codigo_equipo=$_POST['codigo_equipo'];
 $modelo=$_POST['modelo'];
 $marca=$_POST['marca'];
 $descripcion=$_POST['descripcion'];
-$herramienta=$_POST['herramienta'];
 $fecha=$_POST['fecha'];
 $estado=$_POST['estado'];
 $cantidad=$_POST['cantidad'];
@@ -134,15 +126,14 @@ $modelo=strtoupper($modelo);
 
 $marca=strtoupper($marca);
 $descripcion=strtoupper($descripcion);
-$herramienta=strtoupper($herramienta);
 $estado=strtoupper($estado);
             
-			$Insertar= "UPDATE equipo SET  nombre_equipo='$nombre_equipo',codigo_equipo='$codigo_equipo',modelo='$modelo',marca='$marca',descripcion='$descripcion',herramienta='$herramienta',fecha='$fecha',estado='$estado',cantidad='$cantidad' WHERE id_equipo = '$id_equipo' ";
+			$Insertar= "UPDATE equipo SET  nombre_equipo='$nombre_equipo',codigo_equipo='$codigo_equipo',modelo='$modelo',marca='$marca',descripcion='$descripcion',fecha='$fecha',estado='$estado',cantidad='$cantidad' WHERE id_equipo = '$id_equipo' ";
 			
 			 		 
 			 
              $resultadoins=basedatos($Insertar);
-             echo "<table align=center id='background-image'><tr><td><BR><p><strong><center>Los Datos fueron modificados exitosamente</center></strong></p><BR></td></tr></table>";
+             echo "<BR><strong><center>Los Datos fueron modificados exitosamente</center></strong><BR>";
 
        mysql_close ($enlace);
    

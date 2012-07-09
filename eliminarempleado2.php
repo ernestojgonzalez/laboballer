@@ -88,13 +88,7 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -144,7 +138,7 @@
                    </table>
 				   
 				   
-<tr><td colspan="2"><strong><br><br>Presione el botón continuar si está seguro de eliminar el presente informe</strong></td></tr>
+<tr><td colspan="2"><strong><br><br>Presione el botón continuar si está seguro de eliminar el empleado</strong></td></tr>
 <br>
 <br>
 <!--* se llama al archivo eliminarinforme3.php*-->

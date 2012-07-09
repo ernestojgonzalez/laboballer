@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>ELIMINAR EMPLEADO</title>
+<title>LABOBALLER</title>
     <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
@@ -88,31 +88,56 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
- <?php
-  include "coneccionbasedatosmysql.inc";
-    $cedula = $_POST['cedula'];
-	//declarando la variable $registro
-	$enlace =conectarbase();
-	// $enlace se iguala a la funcion cenectarbase()
- $Eliminar = "DELETE FROM empleado WHERE cedula = '$cedula'";
- $resultado=basedatos($Eliminar);
- echo "<center><BR><p><strong><center>El empleado fué eliminado</center></strong></p><BR></center><br></br><br></br>";
- mysql_close ($enlace);
- ?>
+<?php
+// declaracion de variables
+
+$id_parte_pieza=$_POST['id_parte_pieza']; 
+$nombre_equipo=$_POST['nombre_equipo'];
+$nombre_parte=$_POST['nombre_parte'];
+$codigo_parte=$_POST['codigo_parte'];
+$cantidad_parte=$_POST['cantidad_parte'];
+$piezas=$_POST['piezas'];
+
+$nro_fil = 0;
+
+
+include "coneccionbasedatosmysql.inc";
+$enlace =conectarbase();
+
+
+//tomo el valor de un elemento de tipo texto del formulario
+
+//datos del arhivo
+
+//compruebo si las características del archivo son las que deseo
+
+ //COLOCA CONTENIDO EN MAYUSCULA
+
+
+$nombre_equipo=strtoupper($nombre_equipo);
+$nombre_parte=strtoupper($nombre_parte);
+$codigo_parte=strtoupper($codigo_parte);
+$piezas=strtoupper($piezas);
+            
+			$Insertar= "UPDATE partepieza SET  id_parte_pieza='$id_parte_pieza',nombre_equipo='$nombre_equipo',piezas='$piezas',codigo_parte='$codigo_parte',cantidad_parte='$cantidad_parte' WHERE id_parte_pieza = '$id_parte_pieza' ";
+			
+			 		 
+			 
+             $resultadoins=basedatos($Insertar);
+             echo "<BR><p><strong><center>Los Datos fueron modificados exitosamente</center></strong></p><BR>";
+
+       mysql_close ($enlace);
+   
+
+?>
 <!-- FINALIZA LA PAG -->
 <!-- PIE DE PAG -->
-         </div>       <div class="cleared"></div>
+                </div> <div class="cleared"></div>
                 </div>
 
 		<div class="cleared"></div>

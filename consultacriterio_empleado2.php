@@ -77,14 +77,10 @@
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
 <p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
+
 <p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -123,17 +119,15 @@
 
 <center>
 <CAPTION><strong>CONSULTA POR CRITERIO</strong></CAPTION>
-<p>&nbsp;</p>
-<table width="850"  border="1" class="tabla1"/>
+
+<table width="550"  border="1" class="tabla1"/>
 
    <TR bgcolor="#E4E4E7">
 
-	<TH>Nombre</TH>
-	<TH>Apellido</TH>
-	<TH>Cédula</TH>
+	<TH>Empleado</TH>
 	<TH>Sexo</TH>    
-	<TH>Telefono</TH
-	><TH>Direccion</TH>
+	<TH>Telefono</TH>
+	<TH>Direccion</TH>
 	<TH>Fecha</TH>
 	<TH>Horario</TH>
 	<TH>Cargo</TH>
@@ -145,17 +139,14 @@
     {
        $link2 =$row[9];
         
-		echo "<td>$row[1]</td>";
-       	echo "<td>$row[2]</td>";
-       	echo "<td>$row[0]</td>";
-		echo "<td>$row[6]</td>";
-		echo "<td>$row[4]</td>";
-		echo "<td>$row[5]</td>";
-       	echo "<td>$row[7]</td>";
-       	echo "<td>$row[8]</td>";
-		echo "<td>$row[3]</td>";
-		echo "<td><a target=_blank href='$link2'>$row[9]</a></td>";
-
+		echo "<td><center>$row[1]<br></br> $row[2] <br></br>$row[0]</td>";
+		echo "<td><br></br>$row[6]</td>";
+		echo "<td><br></br>$row[4]</td>";
+		echo "<td><br>$row[5]</td>";
+       	echo "<td><br></br>$row[7]</td>";
+       	echo "<td><br></br>$row[8]</td>";
+		echo "<td><br></br>$row[3]</td>";
+	    echo "<td><a target=_blank href='$link2'><img src='$row[9]' width='100'height='70'></a></td>";
 	   $i=$i+1;
 
        if (($i%1)==0)

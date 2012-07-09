@@ -77,28 +77,13 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>                
-                                
-								
-<p>&nbsp;</p>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
                             <br><br>
 <center>
-<strong>CONSULTA DE PARTES Y PIEZAS DE LOS EQUIPOS</strong>
-<br>
-<br><br>
-<p> ESTA CONSULTA PUEDE SER POR; </p>
-<table width="173" height="43" border="1" bordercolor="CCCCCC">
-<TR>
-<td height="37"> <div align="center">Nombre del equipo</div></td>
-</TR>
-</table>
+<p> ESTA CONSULTA PUEDE SER POR;<br>Nombre del equipo </p>
 
 <form action="consultacriterio_partes2.php" method="post" name="form1" id="form1">
     <table width="250" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">

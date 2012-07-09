@@ -33,8 +33,8 @@
 			<a href="#"><span class="l"></span><span class="r"></span><span class="t">Piezas</span></a>
 		<ul>
 				 <li><a href="form_parte_pieza.php">Registro</a></li>
-				 <li><a href="consultacriterio_equipo.php">Consulta de partes y piezas</a></li>
-				 <li><a href="#">Modificar partes</a></li>
+				 <li><a href="consultacriterio_partes.php">Consulta de partes y piezas</a></li>
+				 <li><a href="modificar_pieza.php">Modificar partes</a></li>
                  <li><a href="eliminar_partes.php">Eliminar partes de los equipos</a></li> 
         </ul>
 		</li>	

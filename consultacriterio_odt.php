@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>REGISTRA ODT</title>
-<!-- plantilla  --> 
+<title>CONSULTA-ODT</title>
+  <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
@@ -76,41 +76,33 @@
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
-
 <p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-<div align="center"><?php
-// declaracion de variables
+                            <br><br>
+<center>
+<p> ESTA CONSULTA PUEDE SER POR;<br>Nombre del equipo </p>
 
-$id_odt=$_POST['id_odt'];
-$fallos=$_POST['fallos'];
-$fecha_ini=$_POST['fecha_ini'];
-$fecha_fin=$_POST['fecha_fin'];
-$prioridad=$_POST['prioridad'];
-$datos_empleado=$_POST['datos_empleado'];
-$datos_equipo=$_POST['datos_equipo'];
+<form action="consultacriterio_odt2.php" method="post" name="form1" id="form1">
+<table width="255" border="1" bordercolor="CCCCCC" align="center">
+<TR>
+<td> <center>Equipo</td>
+<td> <center>Empleado</td>
+</TR>
+</table>
+</br>
+<table width="250" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+<tr>
+  <td width="80"><strong>Criterio de Búsqueda</strong></td>
+  <td><input type="text" size="20" name="criterio" id="criterio"></td>
 
-
-
-include "coneccionbasedatosmysql.inc";
-$enlace =conectarbase();
-// $enlace se iguala a la funcion cenectarbase()
-$fallos=strtoupper($fallos);
-$prioridad=strtoupper($prioridad);
-$datos_empleado=strtoupper($datos_empleado);
-$datos_equipo=strtoupper($datos_equipo);
-
-             $Insertar= "INSERT INTO odt VALUES('NULL','$fallos','$fecha_ini','$fecha_fin','$prioridad','$datos_empleado','$datos_equipo')";
-             $resultadoins=basedatos($Insertar);
-             echo "<tr><td><p><strong><center>La Información fue registrada satisfactoriamente</center></strong></p><BR></td></tr>";
-   
-       mysql_close ($enlace);
-   ?></div>
+</tr>
+</table>
+<br>
+<input name="submit" type="submit" value="Buscar">
+</form>
 <!-- PIE DE PAG -->
 </div>
                 <div class="cleared"></div>
@@ -134,7 +126,7 @@ $datos_equipo=strtoupper($datos_equipo);
                             <div class="art-footer-text">
                                 
 <p><a href="#">Link1</a> | <a href="#">Link2</a> | <a href="#">Link3</a></p>
-<p>Derechos reservados en Espańol</p>
+<p>Derechos reservados en Espanol</p>
 
 
                                                             </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>REGISTRA ODT</title>
+<title>CONSULTA-EMPLEADO</title>
 <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
@@ -10,6 +10,7 @@
 <!-- fin plantilla  -->
 </head>
 <body>
+
 <!--INICIO DE LA PLANTILLA -->
 
 <div id="art-page-background-glare">
@@ -84,33 +85,83 @@
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-<div align="center"><?php
-// declaracion de variables
+<?php
 
-$id_odt=$_POST['id_odt'];
-$fallos=$_POST['fallos'];
-$fecha_ini=$_POST['fecha_ini'];
-$fecha_fin=$_POST['fecha_fin'];
-$prioridad=$_POST['prioridad'];
-$datos_empleado=$_POST['datos_empleado'];
-$datos_equipo=$_POST['datos_equipo'];
+	include "coneccionbasedatosmysql.inc";
+    $criterio = $_POST['criterio'];
+	//declarando la variable $criterio
+	$enlace =conectarbase();
+	// $enlace se iguala a la funcion cenectarbase()
 
 
+	if(!isset($_GET['pag']))
+//paginacion
+	{
 
-include "coneccionbasedatosmysql.inc";
-$enlace =conectarbase();
-// $enlace se iguala a la funcion cenectarbase()
-$fallos=strtoupper($fallos);
-$prioridad=strtoupper($prioridad);
-$datos_empleado=strtoupper($datos_empleado);
-$datos_equipo=strtoupper($datos_equipo);
+	$pag=1;
 
-             $Insertar= "INSERT INTO odt VALUES('NULL','$fallos','$fecha_ini','$fecha_fin','$prioridad','$datos_empleado','$datos_equipo')";
-             $resultadoins=basedatos($Insertar);
-             echo "<tr><td><p><strong><center>La Información fue registrada satisfactoriamente</center></strong></p><BR></td></tr>";
-   
-       mysql_close ($enlace);
-   ?></div>
+	}else
+
+	{
+
+		$pag=$_GET['pag'];
+
+	}
+
+	$hasta=10000000;
+	$desde=($hasta*$pag)-$hasta;
+// consulta a la tabla informe_personal	
+	$consulta="SELECT * FROM odt where match (datos_empleado) against ('$criterio*' IN BOOLEAN MODE)";
+	$resultado=mysql_query($consulta,$enlace);
+
+
+?>
+
+<center>
+<CAPTION><strong>CONSULTA POR CRITERIO</strong></CAPTION>
+<p>&nbsp;</p>
+<table width="630"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
+
+   <TR bgcolor="#E4E4E7">
+	<TH>Datos del Empleado</TH>
+	<TH>Datos del Equipo</TH>
+	<TH>Prioridad</TH>
+	<TH>Fecha de Inicio</TH>
+	<TH>Fecha de culminacion</TH>
+	<TH>Fallos</TH>
+  </tr>
+	<?PHP
+		$i=0;
+		while ($row = mysql_fetch_row($resultado))
+    {
+       
+        
+	
+       	echo "<td><center>$row[5]</td>";
+		echo "<td><center>$row[6]</td>";
+		echo "<td><center>$row[4]</td>";
+		echo "<td><center>$row[2]</td>";
+       	echo "<td><center>$row[3]</td>";
+		echo "<td><center>$row[1]</td>";
+		
+
+	   $i=$i+1;
+
+       if (($i%1)==0)
+
+       {
+
+       echo "<tr></tr>";
+
+       }
+
+    }
+
+		mysql_free_result($resultado);
+
+	 ?>
+  </table>
+<p></p><p></p>
 <!-- PIE DE PAG -->
 </div>
                 <div class="cleared"></div>
@@ -134,7 +185,7 @@ $datos_equipo=strtoupper($datos_equipo);
                             <div class="art-footer-text">
                                 
 <p><a href="#">Link1</a> | <a href="#">Link2</a> | <a href="#">Link3</a></p>
-<p>Derechos reservados en Espańol</p>
+<p>Derechos reservados en Espanol</p>
 
 
                                                             </div>

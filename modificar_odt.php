@@ -2,16 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>REGISTRA ODT</title>
+<title>LABOBALLER</title>
+   <!-- plantilla  --> 
+	<meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />    
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<!-- fin plantilla  -->
+   
+
+    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<!--INICIO DE LA PLANTILLA -->
 <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 <!-- fin plantilla  -->
-</head>
-<body>
-<!--INICIO DE LA PLANTILLA -->
-
 <div id="art-page-background-glare">
     <div id="art-page-background-glare-image"> </div>
 </div>
@@ -54,8 +65,8 @@
         </div>
         <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
         <div class="art-logo">
-                 <h1 class="art-logo-name"><a href="./index.html">LABOBALLER  </a></h1>
-                         <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
+                 <h1 class="art-logo-name"><a href="./index.html">LABOBALLER  </a></h1>
+                         <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
                 </div>
     </div>
     </div>
@@ -80,40 +91,26 @@
 <p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
 
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-<div align="center"><?php
-// declaracion de variables
+<form action="modificar_odt2.php" method="post" name="form1" id="form1">
+<div align="center">
+<br/><br/>
+<table width="200" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+<tr>
+  <td width="80"><strong><div align="center">Datos del empleado</div></strong></td>
+  <td><div align="center"><input type="text" size="10" name="criterio" id="criterio"></div></td>
 
-$id_odt=$_POST['id_odt'];
-$fallos=$_POST['fallos'];
-$fecha_ini=$_POST['fecha_ini'];
-$fecha_fin=$_POST['fecha_fin'];
-$prioridad=$_POST['prioridad'];
-$datos_empleado=$_POST['datos_empleado'];
-$datos_equipo=$_POST['datos_equipo'];
-
-
-
-include "coneccionbasedatosmysql.inc";
-$enlace =conectarbase();
-// $enlace se iguala a la funcion cenectarbase()
-$fallos=strtoupper($fallos);
-$prioridad=strtoupper($prioridad);
-$datos_empleado=strtoupper($datos_empleado);
-$datos_equipo=strtoupper($datos_equipo);
-
-             $Insertar= "INSERT INTO odt VALUES('NULL','$fallos','$fecha_ini','$fecha_fin','$prioridad','$datos_empleado','$datos_equipo')";
-             $resultadoins=basedatos($Insertar);
-             echo "<tr><td><p><strong><center>La Información fue registrada satisfactoriamente</center></strong></p><BR></td></tr>";
-   
-       mysql_close ($enlace);
-   ?></div>
-<!-- PIE DE PAG -->
+</tr>
+</table>
+<br>
+<input name="submit" type="submit" value="Buscar">
 </div>
-                <div class="cleared"></div>
+</form>
+<!-- FINALIZA LA PAG -->
+<!-- PIE DE PAG -->
+                </div> <div class="cleared"></div>
                 </div>
 
 		<div class="cleared"></div>
@@ -134,7 +131,7 @@ $datos_equipo=strtoupper($datos_equipo);
                             <div class="art-footer-text">
                                 
 <p><a href="#">Link1</a> | <a href="#">Link2</a> | <a href="#">Link3</a></p>
-<p>Derechos reservados en Espańol</p>
+<p>Derechos reservados en Espanol</p>
 
 
                                                             </div>

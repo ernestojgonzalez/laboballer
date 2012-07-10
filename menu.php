@@ -42,7 +42,7 @@
 			<a href="#"><span class="l"></span><span class="r"></span><span class="t">Orden de Trabajo</span></a>
 			<ul>
 				 <li><a href="form_odt.php">Registrar Orden de Trabajo</a></li>
-				 <li><a href="#">Consultar</a></li>
+				 <li><a href="consultacriterio_odt.php">Consultar</a></li>
 				 <li><a href="#">Modificar</a></li>
 				 <li><a href="#">Eliminar</a></li>
         </ul>

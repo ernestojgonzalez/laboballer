@@ -12,27 +12,40 @@ $odt2 = mysql_query($query_odt2, $conexion) or die(mysql_error());
 $row_odt2 = mysql_fetch_assoc($odt2);
 $totalRows_odt2 = mysql_num_rows($odt2);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>FORMULARIO EQUIPO</title>
-<!-- plantilla  -->
-    <meta name="description" content="Description" />
-    <meta name="keywords" content="Keywords" />
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-<!-- fin plantilla  -->
-
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
+<title>LABOBALLER</title>
 <style type="text/css">
 @import url(calendario/calendar-blue.css);</style>
 <script type="text/javascript" src="calendario/calendar.js"></script>
 <script type="text/javascript" src="calendario/calendar-es.js"></script>
 <script type="text/javascript" src="calendario/calendar-setup.js"></script>
+<script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="jquery.js"></script>
+<script language="javascript" src="validacion.js"></script> 
 
+  <!-- plantilla  --> 
+	<meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />    
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<!-- fin plantilla  -->
+   
+
+    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
- <form method="post" name="form1" id="form1" enctype="multipart/form-data" action="inserta_odt.php" onSubmit="return validar()">
 <!--INICIO DE LA PLANTILLA -->
+<!-- plantilla  --> 
+	<meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />    
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<!-- fin plantilla  -->
 <div id="art-page-background-glare">
     <div id="art-page-background-glare-image"> </div>
 </div>
@@ -102,7 +115,45 @@ $totalRows_odt2 = mysql_num_rows($odt2);
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-<br>   
+
+    <div align="center">
+      <?php
+    include "coneccionbasedatosmysql.inc";
+    $criterio = $_POST['criterio'];
+	//declarando la variable $criterio
+	$enlace =conectarbase();
+	// $enlace se iguala a la funcion cenectarbase()
+  
+    
+  $consulta="SELECT * FROM odt where match (datos_empleado) against ('$criterio*' IN BOOLEAN MODE)";
+  
+  
+ //  $consulta = "SELECT * from empleado where codigo_equipo = '$criterio';";
+  // consulta a la tabla informe_personal
+                   $resultado=basedatos($consulta);
+                   $nro_fil = mysql_num_rows($resultado);
+
+                   if($nro_fil == 0)
+                   {
+
+                   echo "<center><br><br><strong><center>El EMPLEADO $criterio no existe en nuestra base de datos <br> por favor valide sus datos.</center></strong></center><br></br><br></br>";
+                   }else
+                   {
+                   while ($row = mysql_fetch_row($resultado)){
+				   $id_odt=$row[0];
+                   $fallos=$row[1];
+                   $fecha_ini=$row[2];
+                   $fecha_fin=$row[3];
+                   $prioridad=$row[4];
+                   $datos_empleado=$row[5];
+				   $datos_equipo=$row[5];
+          
+
+				  
+                   ?>
+     
+      <div align="center">
+	  <br>   
  
 <p align="center" class="Estilo3"><strong>ORDEN DE TRABAJO </strong><br>
    </p>

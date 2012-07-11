@@ -63,7 +63,7 @@
         </div>
         <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
         <div class="art-logo">
-                 <h1 class="art-logo-name"><a href="./index.html">LABOBALLER  </a></h1>
+                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER  </a></h1>
                          <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
                 </div>
     </div>

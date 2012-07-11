@@ -1,9 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>ELIMINAR EQUIPO</title>
-    <!-- plantilla  --> 
+<title>LABOBALLER</title>
+<style type="text/css">
+@import url(calendario/calendar-blue.css);</style>
+<script type="text/javascript" src="calendario/calendar.js"></script>
+<script type="text/javascript" src="calendario/calendar-es.js"></script>
+<script type="text/javascript" src="calendario/calendar-setup.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script language="javascript" src="validacion.js"></script> 
+
+   <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
@@ -89,22 +98,71 @@
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-
- <?php
-  include "coneccionbasedatosmysql.inc";
-    $codigo_equipo = $_POST['codigo_equipo'];
-	//declarando la variable $registro
+<div align="center">
+ <strong>MODIFICAR ODT</strong>    </p>
+    <p>
+      <?php
+    include "coneccionbasedatosmysql.inc";
+    $criterio = $_POST['criterio'];
+	//declarando la variable $criterio
 	$enlace =conectarbase();
 	// $enlace se iguala a la funcion cenectarbase()
- $Eliminar = "DELETE FROM equipo WHERE codigo_equipo = '$codigo_equipo'";
- $resultado=basedatos($Eliminar);
- echo "<center><p><strong><center>El equipo fué eliminado</center></strong></p></center>";
- mysql_close ($enlace);
- ?>
+  $consulta="SELECT * FROM odt where match (datos_empleado) against ('$criterio*' IN BOOLEAN MODE)";
+  
+  // consulta a la tabla informe_personal
+                   $resultado=basedatos($consulta);
+                   $nro_fil = mysql_num_rows($resultado);
+
+                   if($nro_fil == 0)
+                   {
+
+                   echo "<center><br><br><strong><center>El empleado $criterio <br> no existe en nuestra base de datos.</center></strong></center>";
+                   }else
+                   {
+                   while ($row = mysql_fetch_row($resultado)){
+                    $id_odt=$row[0];
+                    $fallos=$row[1];
+                   $fecha_ini=$row[2];
+                   $fecha_fin=$row[3];
+                   $prioridad=$row[4];
+                   $datos_empleado=$row[5];
+				   $datos_equipo=$row[6];
+
+                   ?>
+     
+    <table width="400" border="8" bordercolor="#CCCCCC">
+                      <tr><td><strong>Datos del empleado:</strong></td><td><?php echo "  $row[0],$row[6]" ?></td></tr>
+                      <tr><td><strong>Datos del equipo:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
+                      <tr><td><strong>Fallas:</strong></td><td><?php echo "$row[1]" ?></td></tr>
+                      <tr><td><strong>Prioridad:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
+                      <tr><td><strong>Fecha inicial:</strong></td><td><?php echo "  $row[2]" ?></td></tr>
+					  <tr><td><strong>Fecha Final:</strong></td><td><?php echo "  $row[3]" ?></td></tr>
+					  <tr><td><a href="eliminar_odt3.php?id_odt=<?php echo $id_odt?>">Eliminar</td></tr><p></p><p></p>
+					 
+                   <?php
+                   }
+                   ?>
+
+
+</table>
+
+    <p></p>
+      <?php
+
+                   }
+                   mysql_free_result($resultado);
+                   mysql_close ($enlace);
+
+
+
+                   ?>
+      </p>
+    <p>&nbsp;
+        </p>
+</div>
 <!-- FINALIZA LA PAG -->
 <!-- PIE DE PAG -->
          </div>       <div class="cleared"></div>

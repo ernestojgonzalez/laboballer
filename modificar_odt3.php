@@ -31,7 +31,7 @@ $totalRows_odt2 = mysql_num_rows($odt2);
 
 </head>
 <body>
- <form method="post" name="form1" id="form1" enctype="multipart/form-data" action="inserta_odt.php" onSubmit="return validar()">
+ <form method="post" name="form1" id="form1" enctype="multipart/form-data" action="modificar_odt4.php" onSubmit="return validar()">
 <!--INICIO DE LA PLANTILLA -->
 <div id="art-page-background-glare">
     <div id="art-page-background-glare-image"> </div>
@@ -98,6 +98,61 @@ $totalRows_odt2 = mysql_num_rows($odt2);
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
+ <?php
+    include "coneccionbasedatosmysql.inc";
+    $id_odt = $_REQUEST['id_odt'];
+	//declarando la variable $criterio
+	$enlace =conectarbase();
+	// $enlace se iguala a la funcion cenectarbase()
+  $consulta="SELECT * FROM odt where id_odt='$id_odt'";
+  
+  // consulta a la tabla informe_personal
+                   $resultado=basedatos($consulta);
+                   $nro_fil = mysql_num_rows($resultado);
+
+                   if($nro_fil == 0)
+                   {
+
+                   echo "<center><br><br><strong><center>El empleado $criterio <br> no existe en nuestra base de datos.</center></strong></center>";
+                   }else
+                   {
+                   while ($row = mysql_fetch_row($resultado)){
+                    $id_odt=$row[0];
+                    $fallos=$row[1];
+                   $fecha_ini=$row[2];
+                   $fecha_fin=$row[3];
+                   $prioridad=$row[4];
+                   $datos_empleado=$row[5];
+				   $datos_equipo=$row[6];
+
+                   ?>
+     <center>
+    <table width="400" border="8" bordercolor="#CCCCCC">
+                      <tr><td><strong>Datos del empleado:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
+                      <tr><td><strong>Datos del equipo:</strong></td><td><?php echo "  $row[6]" ?></td></tr>
+                      <tr><td><strong>Fallas:</strong></td><td><?php echo "$row[1]" ?></td></tr>
+                      <tr><td><strong>Prioridad:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
+                      <tr><td><strong>Fecha inicial:</strong></td><td><?php echo "  $row[2]" ?></td></tr>
+					  <tr><td><strong>Fecha Final:</strong></td><td><?php echo "  $row[3]" ?></td></tr>
+					 <p></p><p></p>
+					 
+                   <?php
+                   }
+                   ?>
+
+
+</table>
+
+    <p></p>
+      <?php
+
+                   }
+                   mysql_free_result($resultado);
+                   mysql_close ($enlace);
+
+
+
+                   ?>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
                 <div class="cleared"></div>
         <div class="art-postcontent">
@@ -114,8 +169,8 @@ $totalRows_odt2 = mysql_num_rows($odt2);
         <td width="172"><label>
           <div align="center">
             <label>
-            <textarea name="fallos" id="fallos"></textarea>
-            </label>
+            <textarea rows="2" cols="20" name="fallos" id="fallos"><?php echo $fallos ?></textarea>
+			</label>
           </div>
         </label></td>
         <td width="120"><div align="center">
@@ -124,7 +179,8 @@ $totalRows_odt2 = mysql_num_rows($odt2);
         <td width="170"><div align="center">
            <label>
            <select name="prioridad" id="prioridad">
-             <option>Seleccionar</option>
+             <option selected><?php echo $prioridad ?></option>
+			 <option></option>
              <option value="urgente">Urgente</option>
              <option value="normal">Normal</option>
            </select>
@@ -141,7 +197,7 @@ $totalRows_odt2 = mysql_num_rows($odt2);
         <!-- combo 1 municipio -->
         <td width="166">Fecha de Inicio:</td>
             <td width="144">
-		  <input type="text" id="fecha1" name="fecha_ini" size="10" onkeypress="return nonumeyletra(event)"readonly="readonly"/>
+		  <input type="text" id="fecha1" name="fecha_ini" size="10" onkeypress="return nonumeyletra(event)"readonly="readonly" value="<?php echo $fecha_ini?>"/>
           <input type="image" src="calendario/calendario.gif" id="fecha" />
           <input type="hidden" name="fechatemp1" id="fechatemp" value="<?php echo $hoy?>" size="20" />
           <script type="text/javascript">
@@ -158,7 +214,7 @@ $totalRows_odt2 = mysql_num_rows($odt2);
 
 				</script></td>
          <td width="150">Fecha de Culminaci&oacute;n: </td>
-            <div><td width="144"><input type="text" id="Fecha_ini" readonly="readonly"name="fecha_fin" size="10" onKeyPress="return nonumeyletra(event)"/><input type="image" src="calendario/calendario.gif" id="fecha_i" /></td>
+            <div><td width="144"><input type="text" id="Fecha_ini" readonly="readonly"name="fecha_fin" size="10" onKeyPress="return nonumeyletra(event)" value="<?php echo $fecha_fin?>"/><input type="image" src="calendario/calendario.gif" id="fecha_i" /></td>
 			
 <!--**********SCRIPT PARA CALENDARIO  *************-->
 			<script type="text/javascript"> 
@@ -182,21 +238,10 @@ $totalRows_odt2 = mysql_num_rows($odt2);
         <td height="26"><div align="center">
           <label></label>
             <label>
-            <select name="datos_empleado" id="datos_empleado">
-              <?php
-do {  
-?>
-              <option value="<?php echo $row_odt['nombre'],' ',$row_odt['apellido'],' ',$row_odt['cedula']?>"<?php if (!(strcmp($row_odt['nombre'], $row_odt['nombre']))) {echo "selected=\"selected\"";} ?>><?php echo $row_odt['nombre'],'----',$row_odt['apellido'],'----',$row_odt['cedula'],'----',$row_odt['sexo'],'----',$row_odt['cargo'],'----',$row_odt['horario']?></option>
-              <?php
-} while ($row_odt = mysql_fetch_assoc($odt));
-  $rows = mysql_num_rows($odt);
-  if($rows > 0) {
-      mysql_data_seek($odt, 0);
-	  $row_odt = mysql_fetch_assoc($odt);
-  }
-?>
-            </select>
-            </label>
+            <input name="datos_empleado" size="40" type="text" id="datos_empleado"  value="<?php echo $datos_empleado ?>"/>
+			
+            
+		    </label>
         </div>
           <div align="center">
             <label for="textarea"></label>
@@ -219,20 +264,8 @@ do {
         </strong>
             <label></label>
             <label>
-            <select name="datos_equipo" id="datos_equipo">
-              <?php
-do {  
-?>
-              <option value="<?php echo $row_odt2['codigo_equipo'],$row_odt2['nombre_equipo']?>"<?php if (!(strcmp($row_odt2['codigo_equipo'], $row_odt2['codigo_equipo']))) {echo "selected=\"selected\"";} ?>><?php echo $row_odt2['codigo_equipo'],'---',$row_odt2['nombre_equipo']?></option>
-              <?php
-} while ($row_odt2 = mysql_fetch_assoc($odt2));
-  $rows = mysql_num_rows($odt2);
-  if($rows > 0) {
-      mysql_data_seek($odt2, 0);
-	  $row_odt2 = mysql_fetch_assoc($odt2);
-  }
-?>
-            </select>
+            <input name="datos_equipo" type="text" id="datos_equipo"  value="<?php echo $datos_equipo ?>" />
+			
             </label>
 </div>          
           <div align="center">
@@ -253,7 +286,9 @@ do {
   
   
     </table>
-<input name="id_odt" type="hidden" value="id_odt" />
+	 <input type="hidden" name="id_odt" id="id_odt" value="<?php echo $id_odt ?>"> 
+
+
     <input name="submit" type="submit" value="Guardar">
 </div>
  </form>

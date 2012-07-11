@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>ELIMINAR EQUIPO</title>
+<title>Sistema </title>
     <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
@@ -89,22 +89,52 @@
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
+<?php
+// declaracion de variables
+$id_odt=$_REQUEST['id_odt'];
+$fallos=$_POST['fallos'];
+$fecha_ini=$_POST['fecha_ini'];
+$fecha_fin=$_POST['fecha_fin'];
+$prioridad=$_POST['prioridad'];
+$datos_empleado=$_POST['datos_empleado'];
+$datos_equipo=$_POST['datos_equipo'];
 
- <?php
-  include "coneccionbasedatosmysql.inc";
-    $codigo_equipo = $_POST['codigo_equipo'];
-	//declarando la variable $registro
-	$enlace =conectarbase();
-	// $enlace se iguala a la funcion cenectarbase()
- $Eliminar = "DELETE FROM equipo WHERE codigo_equipo = '$codigo_equipo'";
- $resultado=basedatos($Eliminar);
- echo "<center><p><strong><center>El equipo fué eliminado</center></strong></p></center>";
- mysql_close ($enlace);
- ?>
+
+
+
+include "coneccionbasedatosmysql.inc";
+$enlace =conectarbase();
+
+
+//tomo el valor de un elemento de tipo texto del formulario
+
+//datos del arhivo
+
+//compruebo si las características del archivo son las que deseo
+
+ //COLOCA CONTENIDO EN MAYUSCULA
+
+
+$fallos=strtoupper($fallos);
+$prioridad=strtoupper($prioridad);
+$datos_empleado=strtoupper($datos_empleado);
+$datos_equipo=strtoupper($datos_equipo);
+            
+			$Insertar= "UPDATE odt SET  fallos='$fallos',fecha_ini='$fecha_ini',fecha_fin='$fecha_fin',prioridad='$prioridad',datos_empleado='$datos_empleado',datos_equipo='$datos_equipo' WHERE id_odt = '$id_odt' ";
+			
+			 		 
+			 
+             $resultadoins=basedatos($Insertar);
+             echo "<BR><strong><center> Los Datos fueron modificados exitosamente</center></strong><BR>";
+
+
+       mysql_close ($enlace);
+   
+
+?>
 <!-- FINALIZA LA PAG -->
 <!-- PIE DE PAG -->
          </div>       <div class="cleared"></div>

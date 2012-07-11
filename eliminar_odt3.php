@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>ELIMINAR EQUIPO</title>
+<title>ELIMINAR EMPLEADO</title>
     <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
@@ -93,16 +93,15 @@
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-
  <?php
   include "coneccionbasedatosmysql.inc";
-    $codigo_equipo = $_POST['codigo_equipo'];
+    $id_odt = $_REQUEST['id_odt'];
 	//declarando la variable $registro
 	$enlace =conectarbase();
 	// $enlace se iguala a la funcion cenectarbase()
- $Eliminar = "DELETE FROM equipo WHERE codigo_equipo = '$codigo_equipo'";
+ $Eliminar = "DELETE FROM odt WHERE id_odt = '$id_odt'";
  $resultado=basedatos($Eliminar);
- echo "<center><p><strong><center>El equipo fué eliminado</center></strong></p></center>";
+ echo "<center><BR><p><strong><center>La Orden de Trabajo fué eliminada correctamente</center></strong></p><BR></center>";
  mysql_close ($enlace);
  ?>
 <!-- FINALIZA LA PAG -->

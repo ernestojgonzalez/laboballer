@@ -1,18 +1,4 @@
-<?php require_once('Connections/conexion.php'); ?>
-<?php
-mysql_select_db($database_conexion, $conexion);
-$query_odt = "SELECT * FROM empleado";
-$odt = mysql_query($query_odt, $conexion) or die(mysql_error());
-$row_odt = mysql_fetch_assoc($odt);
-$totalRows_odt = mysql_num_rows($odt);
-
-mysql_select_db($database_conexion, $conexion);
-$query_odt2 = "SELECT * FROM equipo";
-$odt2 = mysql_query($query_odt2, $conexion) or die(mysql_error());
-$row_odt2 = mysql_fetch_assoc($odt2);
-$totalRows_odt2 = mysql_num_rows($odt2);
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
@@ -26,7 +12,7 @@ $totalRows_odt2 = mysql_num_rows($odt2);
 <script type="text/javascript" src="jquery.js"></script>
 <script language="javascript" src="validacion.js"></script> 
 
-  <!-- plantilla  --> 
+   <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
@@ -88,7 +74,7 @@ $totalRows_odt2 = mysql_num_rows($odt2);
         </div>
         <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
         <div class="art-logo">
-                 <h1 class="art-logo-name"><a href="./index.html">LABOBALLER  </a></h1>
+                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER  </a></h1>
                          <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
                 </div>
     </div>
@@ -115,20 +101,17 @@ $totalRows_odt2 = mysql_num_rows($odt2);
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
-
-    <div align="center">
+<div align="center">
+ <strong>MODIFICAR ODT</strong>    </p>
+    <p>
       <?php
     include "coneccionbasedatosmysql.inc";
     $criterio = $_POST['criterio'];
 	//declarando la variable $criterio
 	$enlace =conectarbase();
 	// $enlace se iguala a la funcion cenectarbase()
-  
-    
   $consulta="SELECT * FROM odt where match (datos_empleado) against ('$criterio*' IN BOOLEAN MODE)";
   
-  
- //  $consulta = "SELECT * from empleado where codigo_equipo = '$criterio';";
   // consulta a la tabla informe_personal
                    $resultado=basedatos($consulta);
                    $nro_fil = mysql_num_rows($resultado);
@@ -136,183 +119,86 @@ $totalRows_odt2 = mysql_num_rows($odt2);
                    if($nro_fil == 0)
                    {
 
-                   echo "<center><br><br><strong><center>El EMPLEADO $criterio no existe en nuestra base de datos <br> por favor valide sus datos.</center></strong></center><br></br><br></br>";
+                   echo "<center><br><br><strong><center>El empleado $criterio <br> no existe en nuestra base de datos.</center></strong></center>";
                    }else
                    {
                    while ($row = mysql_fetch_row($resultado)){
-				   $id_odt=$row[0];
-                   $fallos=$row[1];
+                    $id_odt=$row[0];
+                    $fallos=$row[1];
                    $fecha_ini=$row[2];
                    $fecha_fin=$row[3];
                    $prioridad=$row[4];
                    $datos_empleado=$row[5];
-				   $datos_equipo=$row[5];
-          
+				   $datos_equipo=$row[6];
 
-				  
                    ?>
      
-      <div align="center">
-	  <br>   
- 
-<p align="center" class="Estilo3"><strong>ORDEN DE TRABAJO </strong><br>
-   </p>
+    <table width="400" border="8" bordercolor="#CCCCCC">
+                      <tr><td><strong>Datos del empleado:</strong></td><td><?php echo "  $row[0],$row[6]" ?></td></tr>
+                      <tr><td><strong>Datos del equipo:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
+                      <tr><td><strong>Fallas:</strong></td><td><?php echo "$row[1]" ?></td></tr>
+                      <tr><td><strong>Prioridad:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
+                      <tr><td><strong>Fecha inicial:</strong></td><td><?php echo "  $row[2]" ?></td></tr>
+					  <tr><td><strong>Fecha Final:</strong></td><td><?php echo "  $row[3]" ?></td></tr>
+					  <tr><td><a href="modificar_odt3.php?id_odt=<?php echo $id_odt?>">MODIFICAR</td></tr><p></p><p></p>
+					 
+                   <?php
+                   }
+                   ?>
 
-<div align="center">
-  <table  width="632" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
-      <tr>
-        <td width="124"><div align="center"><strong>Fallos que presenta el equipo </strong></div></td>
-        <td width="172"><label>
-          <div align="center">
-            <label>
-            <textarea name="fallos" id="fallos"></textarea>
-            </label>
-          </div>
-        </label></td>
-        <td width="120"><div align="center">
-          <p><strong>Prioridad</strong></p>
-        </div></td>
-        <td width="170"><div align="center">
-           <label>
-           <select name="prioridad" id="prioridad">
-             <option>Seleccionar</option>
-             <option value="urgente">Urgente</option>
-             <option value="normal">Normal</option>
-           </select>
-           </label>
-        </div></td>
-      </tr>
-    </table>
-    <br />
-    <table  border="1" bordercolor="#FFFFFF" width="632" bgcolor="#BDBDBD">
-      <tr>
-        <?php // formato de la fecha ano, mes y dia
-              $hoy=date("Y-m-d");
-            ?>
-        <!-- combo 1 municipio -->
-        <td width="166">Fecha de Inicio:</td>
-            <td width="144">
-		  <input type="text" id="fecha1" name="fecha_ini" size="10" onkeypress="return nonumeyletra(event)"readonly="readonly"/>
-          <input type="image" src="calendario/calendario.gif" id="fecha" />
-          <input type="hidden" name="fechatemp1" id="fechatemp" value="<?php echo $hoy?>" size="20" />
-          <script type="text/javascript">
 
-					//importante colocar esto cada vez que se utiliza el calendario y adaptarlo al input que se va a utilizar
- 					Calendar.setup
-						(
-    							{
-      								inputField  : "fecha1", //nombre del id de del campo
-      								ifFormat    : "%d-%m-%Y",
-      								button      : "fecha" //nombre del id del campo boton o imagen que saca el calendario
-    							}
-  						);
+</table>
 
-				</script></td>
-         <td width="150">Fecha de Culminaci&oacute;n: </td>
-            <div><td width="144"><input type="text" id="Fecha_ini" readonly="readonly"name="fecha_fin" size="10" onKeyPress="return nonumeyletra(event)"/><input type="image" src="calendario/calendario.gif" id="fecha_i" /></td>
-			
-<!--**********SCRIPT PARA CALENDARIO  *************-->
-			<script type="text/javascript"> 
-					//importante colocar esto cada vez que se utiliza el calendario y adaptarlo al input que se va a utilizar 
- 					Calendar.setup
-						(
-    							{
-      								inputField  : "Fecha_ini", //nombre del id de del campo
-      								ifFormat    : "%d-%m-%Y",
-      								button      : "fecha_i" //nombre del id del campo boton o imagen que saca el calendario
-    							}
-  						);
-  
-				</script></div>
-      </tr>
-    </table>
-    <p>&nbsp;</p>
-    <p>DATOS DEL  EMPLEADO</p>
-    <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
-      <tr>
-        <td height="26"><div align="center">
-          <label></label>
-            <label>
-            <select name="datos_empleado" id="datos_empleado">
-              <?php
-do {  
-?>
-              <option value="<?php echo $row_odt['nombre'],' ',$row_odt['apellido'],' ',$row_odt['cedula']?>"<?php if (!(strcmp($row_odt['nombre'], $row_odt['nombre']))) {echo "selected=\"selected\"";} ?>><?php echo $row_odt['nombre'],'----',$row_odt['apellido'],'----',$row_odt['cedula'],'----',$row_odt['sexo'],'----',$row_odt['cargo'],'----',$row_odt['horario']?></option>
-              <?php
-} while ($row_odt = mysql_fetch_assoc($odt));
-  $rows = mysql_num_rows($odt);
-  if($rows > 0) {
-      mysql_data_seek($odt, 0);
-	  $row_odt = mysql_fetch_assoc($odt);
-  }
-?>
-            </select>
-            </label>
+    <p></p>
+      <?php
+
+                   }
+                   mysql_free_result($resultado);
+                   mysql_close ($enlace);
+
+
+
+                   ?>
+      </p>
+    <p>&nbsp;
+        </p>
+</div>
+<!-- FINALIZA LA PAG -->
+<!-- PIE DE PAG -->
+         </div>       <div class="cleared"></div>
+                </div>
+
+		<div class="cleared"></div>
+    </div>
+</div>
+
+                      <div class="cleared"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+            <div class="art-footer">
+                <div class="art-footer-t"></div>
+                <div class="art-footer-l"></div>
+                <div class="art-footer-b"></div>
+                <div class="art-footer-r"></div>
+                <div class="art-footer-body">
+                            <div class="art-footer-text">
+                                
+<p><a href="#">Link1</a> | <a href="#">Link2</a> | <a href="#">Link3</a></p>
+<p>Derechos reservados en Espanol</p>
+
+
+                                                            </div>
+                    <div class="cleared"></div>
+                </div>
+            </div>
+    		<div class="cleared"></div>
         </div>
-          <div align="center">
-            <label for="textarea"></label>
-            <div align="center">
-              <label></label>
+    </div>
+    <div class="cleared"></div>
+    <p class="art-page-footer"><a href="http://www.artisteer.com/?p=website_templates">Website Template</a> created with Artisteer.</p>
 </div>
-          </div>
-          <div align="center"></div>          <div align="center">
-            <label></label>
-                              </div></td>
-      </tr>
-    </table>
-    <p><br>
-    </p>
-    <p>DATOS DEL EQUIPO </p>
-    <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
-      <tr>
-        <td height="26"><div align="center"><strong>Equipo
-          <label></label>
-        </strong>
-            <label></label>
-            <label>
-            <select name="datos_equipo" id="datos_equipo">
-              <?php
-do {  
-?>
-              <option value="<?php echo $row_odt2['codigo_equipo'],$row_odt2['nombre_equipo']?>"<?php if (!(strcmp($row_odt2['codigo_equipo'], $row_odt2['codigo_equipo']))) {echo "selected=\"selected\"";} ?>><?php echo $row_odt2['codigo_equipo'],'---',$row_odt2['nombre_equipo']?></option>
-              <?php
-} while ($row_odt2 = mysql_fetch_assoc($odt2));
-  $rows = mysql_num_rows($odt2);
-  if($rows > 0) {
-      mysql_data_seek($odt2, 0);
-	  $row_odt2 = mysql_fetch_assoc($odt2);
-  }
-?>
-            </select>
-            </label>
-</div>          
-          <div align="center">
-            <label for="textarea"></label>
-            <div align="center"></div>
-        </div>          </td>
-      </tr>
-    </table>
-    <br>
-    <br>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    </table>
-<input name="id_odt" type="hidden" value="id_odt" />
-    <input name="submit" type="submit" value="Guardar">
-</div>
- </form>
 
 </body>
 </html>
-<?php
-mysql_free_result($odt);
-
-mysql_free_result($odt2);
-?>

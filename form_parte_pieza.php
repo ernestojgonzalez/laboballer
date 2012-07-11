@@ -68,7 +68,7 @@ $totalRows_nueva = mysql_num_rows($nueva);
         </div>
         <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
         <div class="art-logo">
-                 <h1 class="art-logo-name"><a href="./index.html">LABOBALLER  </a></h1>
+                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER  </a></h1>
                          <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
                 </div>
     </div>
@@ -152,10 +152,10 @@ do {
       </div></td>
       <td width="395" bgcolor="#BDBDBD">&nbsp;</td>
     </tr>
-  <td width="110"><div align="center"><strong>Código</strong></div></td>
+  <td width="110"><div align="center"><br><strong>Código</strong></br></div></td>
       <td width="144"><label> </label>
           <div align="center">
-            <input name="codigo_parte" type="text" id="codigo_parte" />
+            <br><input name="codigo_parte" type="text" id="codigo_parte" /></br>
         </div></td>
     <td width="95" bgcolor="#BDBDBD"><div align="center">
           <p>&nbsp;</p>

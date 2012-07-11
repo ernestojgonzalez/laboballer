@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
-<title>ELIMINAR EQUIPO</title>
-    <!-- plantilla  --> 
+<title>LABOBALLER</title>
+   <!-- plantilla  --> 
 	<meta name="description" content="Description" />
     <meta name="keywords" content="Keywords" />    
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
@@ -87,27 +87,30 @@
 	<div class="art-nav-l"></div>
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
+
 <p>&nbsp;</p>
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-<p>&nbsp;</p>
+
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
+<form action="eliminar_odt2.php" method="post" name="form1" id="form1">
+<div align="center">
+<br/><br/>
+<table width="200" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+<tr>
+  <td width="80"><strong><div align="center">Datos del empleado</div></strong></td>
+  <td><div align="center"><input type="text" size="10" name="criterio" id="criterio"></div></td>
 
- <?php
-  include "coneccionbasedatosmysql.inc";
-    $codigo_equipo = $_POST['codigo_equipo'];
-	//declarando la variable $registro
-	$enlace =conectarbase();
-	// $enlace se iguala a la funcion cenectarbase()
- $Eliminar = "DELETE FROM equipo WHERE codigo_equipo = '$codigo_equipo'";
- $resultado=basedatos($Eliminar);
- echo "<center><p><strong><center>El equipo fué eliminado</center></strong></p></center>";
- mysql_close ($enlace);
- ?>
+</tr>
+</table>
+<br>
+<input name="submit" type="submit" value="Buscar">
+</div>
+</form>
 <!-- FINALIZA LA PAG -->
 <!-- PIE DE PAG -->
-         </div>       <div class="cleared"></div>
+                </div> <div class="cleared"></div>
                 </div>
 
 		<div class="cleared"></div>

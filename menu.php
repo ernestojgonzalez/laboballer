@@ -43,8 +43,8 @@
 			<ul>
 				 <li><a href="form_odt.php">Registrar Orden de Trabajo</a></li>
 				 <li><a href="consultacriterio_odt.php">Consultar</a></li>
-				 <li><a href="#">Modificar</a></li>
-				 <li><a href="#">Eliminar</a></li>
+				 <li><a href="modificar_odt.php">Modificar</a></li>
+				 <li><a href="eliminar_odt.php">Eliminar</a></li>
         </ul>
 		</li>
 		<li>

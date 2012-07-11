@@ -55,7 +55,7 @@
         </div>
         <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
         <div class="art-logo">
-                 <h1 class="art-logo-name"><a href="./index.html">LABOBALLER  </a></h1>
+                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER  </a></h1>
                          <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
                 </div>
     </div>
@@ -120,14 +120,14 @@
 <center>
 <CAPTION><strong>CONSULTA POR CRITERIO</strong></CAPTION>
 <p>&nbsp;</p>
-<table width="630"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
+<table width="650"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
 
    <TR bgcolor="#E4E4E7">
-	<TH>Datos del Empleado</TH>
+	<TH width="80">Datos del Empleado</TH>
 	<TH>Datos del Equipo</TH>
 	<TH>Prioridad</TH>
-	<TH>Fecha de Inicio</TH>
-	<TH>Fecha de culminacion</TH>
+	<TH width="65">Fecha de Inicio</TH>
+	<TH width="65">Fecha de culminacion</TH>
 	<TH>Fallos</TH>
   </tr>
 	<?PHP

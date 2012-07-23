@@ -1,28 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
-<head>
-    <!--
-    Created by Artisteer v3.0.0.39952
-    Base template (without user's data) checked by http://validator.w3.org : "This page is valid XHTML 1.0 Transitional"
-    -->
-   
-   
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>CONSULTA-empleado</title>
-    <!-- plantilla  --> 
-	<meta name="description" content="Description" />
-    <meta name="keywords" content="Keywords" />    
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-<!-- fin plantilla  -->
-   
-
-    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
-    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
-
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
 <!--INICIO DE LA PLANTILLA -->
 <!-- plantilla  --> 
 	<meta name="description" content="Description" />
@@ -71,8 +46,8 @@
         </div>
         <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
         <div class="art-logo">
-                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER  </a></h1>
-                         <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
+                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER  </a></h1>
+                         <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
                 </div>
     </div>
     </div>
@@ -94,10 +69,8 @@
 	<div class="art-nav-r"></div>
 <?php include "menu.php" ?>
 <p>&nbsp;</p>
-
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
-
-
+<p>&nbsp;</p>
                 <div class="cleared"></div>
         <div class="art-postcontent">
 <!-- EMPIEZA LA PAG -->
@@ -123,12 +96,11 @@
 
 	}
 
-	$hasta=10;
+	$hasta=30;
 
 	$desde=($hasta*$pag)-$hasta;
 
-	$consulta="SELECT * FROM empleado order by fecha LIMIT $desde, $hasta";
-
+	$consulta="SELECT * FROM partepieza LIMIT $desde, $hasta";
 	$resultado=mysql_query($consulta,$enlace);
 
 ?><title>Consulta-LABOBALLER</title>
@@ -139,23 +111,22 @@
 
 <center>
 
-<table width="630"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
+<table width="550"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
 <CAPTION><strong>
+<p>&nbsp;</p>
+<p>Piezas Registradas</p>
 
-<p>Empleados de la Empresa</p>
 <p></strong></CAPTION>
 
 
   <TR>
 
-	<TH bgcolor="#E4E4E7" width="10">Empleado</TH>
-	<TH bgcolor="#E4E4E7" width="130">Cargo</TH>
-	<TH bgcolor="#E4E4E7" width="110">Teléfono</TH>
-	<TH bgcolor="#E4E4E7" width="130">Dirección</TH>
-	<TH bgcolor="#E4E4E7" width="130">Sexo</TH>
-    <TH bgcolor="#E4E4E7" width="90">Fecha</TH>
-	<TH bgcolor="#E4E4E7" width="90">Horario</TH>
-	<TH bgcolor="#E4E4E7" width="120">Mostrar Foto</TH>
+	<TH bgcolor="#E4E4E7" >Equipo</TH>
+	<TH bgcolor="#E4E4E7">Parte del Equipo</TH>
+	<TH bgcolor="#E4E4E7">Codigo</TH>
+	<TH bgcolor="#E4E4E7" >Cantidad</TH>
+	<TH bgcolor="#E4E4E7">piezas</TH>
+
   </tr>
 
 	<?PHP
@@ -163,18 +134,13 @@
 		while ($row = mysql_fetch_row($resultado))
     {
 
-        $link2 =$row[9];
-
-
-		echo "<td>$row[1], $row[2]. <p> CI:$row[0]</p></td>";
-        echo "<center><td>$row[3]</td>";
+ 
+       	echo "<td><center>$row[1]</td>";
+       	echo "<td><center>$row[3]</td>";
 		echo "<td><center>$row[4]</td>";
-       	echo "<td><center>$row[5]</td>";
-		echo "<td><center>$row[6]</td>";
-       	echo "<td><center>$row[7]</td>";
-       	echo "<td><center>$row[8]</td>";	
-		echo "<td><a target=_blank href='$link2'><img src='$row[9]' width='120'height='100'></a></td>";
-      	
+		echo "<td><center>$row[5]</td>";
+       	echo "<td><center>$row[2]</td>";	
+
 	   $i=$i+1;
 
        if (($i%1)==0)
@@ -195,9 +161,9 @@
 
   </table>
 
- <?PHP
+    <?PHP
 
-		$consulta="select count(nombre) from empleado";
+		$consulta="select count(id_parte_pieza) from partepieza";
 
 		$lista=mysql_query($consulta,$enlace);
 
@@ -211,18 +177,18 @@
 
 		{
 
-			echo "<a href=\"consulta_empleado.php?pag=1\">|<<</a> <a href=\"pagina1.php?pag=".($pag-1)."\"></a> | ";
+			echo "<a href=\"consulta_pieza.php?pag=1\">|<<</a> <a href=\"pagina1.php?pag=".($pag-1)."\"></a> | ";
 
 		}
 
-		echo "<a href=\"consulta_empleado.php\">Volver</a> | ";
+		echo "<a href=\"consulta_pieza.php\">Volver</a> | ";
 
 		if($pag<$paginas)
 
 		{
 
 
-			echo "<a href=\"consulta_empleado.php?pag=".($pag+1)."\">>></a> <a href=\"pagina1.php?pag=".($paginas)."\">|</a>";
+			echo "<a href=\"consulta_pieza.php?pag=".($pag+1)."\">>></a> <a href=\"pagina1.php?pag=".($paginas)."\">|</a>";
 
 		}
 
@@ -251,7 +217,7 @@
                             <div class="art-footer-text">
                                 
 <p><a href="#">Link1</a> | <a href="#">Link2</a> | <a href="#">Link3</a></p>
-<p>Derechos reservados en Español</p>
+<p>Derechos reservados en Espa�ol</p>
 
 
                                                             </div>
@@ -266,4 +232,3 @@
 </div>
 
 </body>
-</html>

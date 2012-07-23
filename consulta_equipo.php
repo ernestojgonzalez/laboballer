@@ -115,7 +115,7 @@
 <table width="550"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
 <CAPTION><strong>
 <p>&nbsp;</p>
-<p>CONSULTA GENERAL</p>
+<p>Equipos de la Organizacion</p>
 
 <p></strong></CAPTION>
 

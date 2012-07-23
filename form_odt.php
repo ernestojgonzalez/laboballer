@@ -183,10 +183,11 @@ $totalRows_odt2 = mysql_num_rows($odt2);
           <label></label>
             <label>
             <select name="datos_empleado" id="datos_empleado">
-              <?php
+             <option selected="selected">-------->  Seleccionar...</option>
+			  <?php
 do {  
 ?>
-              <option value="<?php echo $row_odt['nombre'],' ',$row_odt['apellido'],' ',$row_odt['cedula']?>"<?php if (!(strcmp($row_odt['nombre'], $row_odt['nombre']))) {echo "selected=\"selected\"";} ?>><?php echo $row_odt['nombre'],'----',$row_odt['apellido'],'----',$row_odt['cedula'],'----',$row_odt['sexo'],'----',$row_odt['cargo'],'----',$row_odt['horario']?></option>
+              <option value="<?php echo $row_odt['nombre'],'  ',$row_odt['apellido'],'  ',$row_odt['cedula']?>"<?php if (!(strcmp($row_odt['nombre'], $row_odt['nombre'])))  ?>><?php echo $row_odt['nombre'],'   ',$row_odt['apellido'],'   ',$row_odt['cedula'],'   ',$row_odt['sexo'],'   ',$row_odt['cargo'],'   ',$row_odt['horario']?></option>
               <?php
 } while ($row_odt = mysql_fetch_assoc($odt));
   $rows = mysql_num_rows($odt);
@@ -220,10 +221,11 @@ do {
             <label></label>
             <label>
             <select name="datos_equipo" id="datos_equipo">
-              <?php
+            <option selected="selected">-------->  Seleccionar...</option>
+			  <?php
 do {  
 ?>
-              <option value="<?php echo $row_odt2['codigo_equipo'],$row_odt2['nombre_equipo']?>"<?php if (!(strcmp($row_odt2['codigo_equipo'], $row_odt2['codigo_equipo']))) {echo "selected=\"selected\"";} ?>><?php echo $row_odt2['codigo_equipo'],'---',$row_odt2['nombre_equipo']?></option>
+              <option value="<?php echo $row_odt2['codigo_equipo'],$row_odt2['nombre_equipo']?>"<?php if (!(strcmp($row_odt2['codigo_equipo'], $row_odt2['codigo_equipo'])))  ?>><?php echo $row_odt2['codigo_equipo'],'  ',$row_odt2['nombre_equipo']?></option>
               <?php
 } while ($row_odt2 = mysql_fetch_assoc($odt2));
   $rows = mysql_num_rows($odt2);

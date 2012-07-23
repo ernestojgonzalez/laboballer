@@ -13,7 +13,6 @@
 			<a href="#"><span class="l"></span><span class="r"></span><span class="t">Empleados</span></a>
 		<ul>
 				 <li><a href="form_empleado.php">Registro</a></a></li>
-                 <li><a href="consulta_empleado.php">Consulta General</a></li>
 				 <li><a href="consultacriterio_empleado.php">Consulta Criterios</a></li>
 				 <li><a href="modificar_empleado1.php">Modificar Empleado</a></a></li>
                  <li><a href="eliminarempleado.php">Eliminar Empleado </a></li> 
@@ -23,7 +22,6 @@
 			<a href="#"><span class="l"></span><span class="r"></span><span class="t">Equipos</span></a>
 		<ul>
 				 <li><a href="form_equipo.php">Registro</a></li>
-                 <li><a href="consulta_equipo.php">Consulta General</a></li>
 				 <li><a href="consultacriterio_equipo.php">Consulta Criterio</a></li>
 				 <li><a href="modificar_equipo1.php">Modificar Equipo </a></li>
                  <li><a href="eliminarequipo.php">Eliminar Equipo </a></li> 
@@ -48,7 +46,14 @@
         </ul>
 		</li>
 		<li>
-			<a href="#"><span class="l"></span><span class="r"></span><span class="t">Salir</span></a>
+			<a href="#"><span class="l"></span><span class="r"></span><span class="t">Inventario</span></a>
+			<ul>
+                 <li><a href="consulta_empleado.php">EMPLEADOS</a></li>
+                 <li><a href="consulta_equipo.php">EQUIPOS</a></li>
+				  <li><a href="consulta_pieza.php">PIEZAS</a></li>
+                 <li><a href="consulta_odt.php">ODT</a></li>
+				
+        </ul>
 		</li>			
 	</ul>
 </div>

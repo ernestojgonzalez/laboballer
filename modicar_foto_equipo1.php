@@ -112,9 +112,9 @@ $enlace =conectarbase();
  $tipo_archivo = $_FILES['archivo']['type'];
  $tamano_archivo = $_FILES['archivo']['size'];
 //compruebo si las características del archivo son las que deseo
-if (!((strpos($tipo_archivo, "jpeg")) && ($tamano_archivo < 100000000)))
+if (!((strpos($tipo_archivo, "jpeg") || strpos($tipo_archivo, "gif") || strpos($tipo_archivo, "jpg") || strpos($tipo_archivo, "png")) && ($tamano_archivo < 100000000)))
 {
-   echo "<center>La extensión o el tamano de los foto no es correcta. <br><br>>Se permiten fotos con formato .jpg unicamente<br>";
+   echo "<center>La extensión o el tamano de los foto no es correcta. <br><br>>Se permiten fotos unicamente<br>";
 }
 else 
 {

@@ -128,14 +128,16 @@
                    $fecha_ini=$row[2];
                    $fecha_fin=$row[3];
                    $prioridad=$row[4];
-                   $datos_empleado=$row[5];
-				   $datos_equipo=$row[6];
+				   $prioridad=$row[5];
+                   $datos_empleado=$row[6];
+				   $datos_equipo=$row[7];
 
                    ?>
      
     <table width="400" border="8" bordercolor="#CCCCCC">
-                      <tr><td><strong>Datos del empleado:</strong></td><td><?php echo "  $row[0],$row[6]" ?></td></tr>
-                      <tr><td><strong>Datos del equipo:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
+                      <tr><td><strong>Estatus:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
+					  <tr><td><strong>Datos del empleado:</strong></td><td><?php echo "  $row[6]" ?></td></tr>
+                      <tr><td><strong>Datos del equipo:</strong></td><td><?php echo "  $row[7]" ?></td></tr>
                       <tr><td><strong>Fallas:</strong></td><td><?php echo "$row[1]" ?></td></tr>
                       <tr><td><strong>Prioridad:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
                       <tr><td><strong>Fecha inicial:</strong></td><td><?php echo "  $row[2]" ?></td></tr>

@@ -94,7 +94,7 @@ $fecha_fin=$_POST['fecha_fin'];
 $prioridad=$_POST['prioridad'];
 $datos_empleado=$_POST['datos_empleado'];
 $datos_equipo=$_POST['datos_equipo'];
-
+$estatus=$_POST['estatus'];
 
 
 include "coneccionbasedatosmysql.inc";
@@ -104,8 +104,9 @@ $fallos=strtoupper($fallos);
 $prioridad=strtoupper($prioridad);
 $datos_empleado=strtoupper($datos_empleado);
 $datos_equipo=strtoupper($datos_equipo);
+$estatus=strtoupper($estatus);
 
-             $Insertar= "INSERT INTO odt VALUES('NULL','$fallos','$fecha_ini','$fecha_fin','$prioridad','$datos_empleado','$datos_equipo')";
+             $Insertar= "INSERT INTO odt VALUES('NULL','$fallos','$fecha_ini','$fecha_fin','$prioridad','$estatus','$datos_empleado','$datos_equipo')";
              $resultadoins=basedatos($Insertar);
              echo "<tr><td><p><strong><center>La Información fue registrada satisfactoriamente</center></strong></p><BR></td></tr>";
    

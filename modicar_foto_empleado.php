@@ -121,14 +121,14 @@ else
 	// funcion para copiar el archivo en el servidor
    if (move_uploaded_file($_FILES['archivo']['tmp_name'], "rutas/$nombre_archivo2"))
    {
-      echo "<BR><p><strong><center>El archivo ha sido Modificado correctamente</center></strong></p><BR>";
+      echo "<BR><p><strong><center>El archivo ha sido Modificado correctamente</center></strong></p>";
       if($nro_fil == 0)
            {
              $ruta = "rutas/$nombre_archivo2"; 
 			 // modifica la tabla cuando el nu de registro sea igual al num de registro recibido
              $Insertar= "UPDATE empleado SET titulo='$titulo', archivo='$ruta' WHERE $cedula=cedula";
              $resultadoins=basedatos($Insertar);
-             echo "<BR><p><strong><center>Foto almacenado</center></strong></p><BR>";
+             echo "<strong><center>Foto Modificada</center></strong></p><BR>";
            }
        mysql_close ($enlace);
    }else

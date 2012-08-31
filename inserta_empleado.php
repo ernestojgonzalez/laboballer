@@ -97,6 +97,8 @@ $titulo=$_POST['titulo'];
 $fecha=$_POST['fecha'];
 $horario=$_POST['horario'];
 $cargo=$_POST['cargo'];
+$hora=$_POST['hora'];
+$salario=$_POST['salario'];
 $titulo=$nombre.$cedula;
 $nro_fil = 0;
 
@@ -139,8 +141,9 @@ $cargo=strtoupper($cargo);
 $horario=strtoupper($horario);
 
 
+
 // funcion para insertar los ddatos en la tabla informe_personal
-             $Insertar= "INSERT INTO empleado VALUES('$cedula','$nombre','$apellido','$cargo','$telefono','$direccion','$sexo','$fecha','$horario','$ruta','$titulo')";
+             $Insertar= "INSERT INTO empleado VALUES('$cedula','$nombre','$apellido','$cargo','$telefono','$direccion','$sexo','$fecha','$horario','$ruta','$titulo','$salario','$hora')";
              $resultadoins=basedatos($Insertar);
              echo "<BR><strong><center>La Información fue registrada satisfactoriamente</center></strong><BR></tr>";
            }

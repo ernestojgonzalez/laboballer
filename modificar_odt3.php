@@ -122,14 +122,16 @@ $totalRows_odt2 = mysql_num_rows($odt2);
                    $fecha_ini=$row[2];
                    $fecha_fin=$row[3];
                    $prioridad=$row[4];
-                   $datos_empleado=$row[5];
-				   $datos_equipo=$row[6];
+				   $estatus=$row[5];
+                   $datos_empleado=$row[6];
+				   $datos_equipo=$row[7];
 
                    ?>
      <center>
     <table width="400" border="8" bordercolor="#CCCCCC">
-                      <tr><td><strong>Datos del empleado:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
-                      <tr><td><strong>Datos del equipo:</strong></td><td><?php echo "  $row[6]" ?></td></tr>
+                      <tr><td><strong>Estatus:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
+					  <tr><td><strong>Datos del empleado:</strong></td><td><?php echo "  $row[6]" ?></td></tr>
+                      <tr><td><strong>Datos del equipo:</strong></td><td><?php echo "  $row[7]" ?></td></tr>
                       <tr><td><strong>Fallas:</strong></td><td><?php echo "$row[1]" ?></td></tr>
                       <tr><td><strong>Prioridad:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
                       <tr><td><strong>Fecha inicial:</strong></td><td><?php echo "  $row[2]" ?></td></tr>
@@ -231,14 +233,27 @@ $totalRows_odt2 = mysql_num_rows($odt2);
 				</script></div>
       </tr>
     </table>
-    <p>&nbsp;</p>
+
+	<p>ESTATUS</p>
+	<table width="250" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+        <td width="170"><center>
+           <select name="estatus" id="estatus">
+             <option selected><?php echo $estatus ?></option>
+			 <option></option>
+             <option value="activo">Activo</option>
+             <option value="culminado">culminado</option>
+           </select>
+           </td>
+      </tr>
+    </table>
+	
     <p>DATOS DEL  EMPLEADO</p>
     <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
       <tr>
         <td height="26"><div align="center">
           <label></label>
             <label>
-            <input name="datos_empleado" size="40" type="text" id="datos_empleado"  value="<?php echo $datos_empleado ?>"/>
+            <input name="datos_empleado" size="60" type="text" id="datos_empleado"  value="<?php echo $datos_empleado ?>"/>
 			
             
 		    </label>
@@ -259,13 +274,10 @@ $totalRows_odt2 = mysql_num_rows($odt2);
     <p>DATOS DEL EQUIPO </p>
     <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
       <tr>
-        <td height="26"><div align="center"><strong>Equipo
-          <label></label>
-        </strong>
+        <td height="26"><div align="center">
             <label></label>
             <label>
-            <input name="datos_equipo" type="text" id="datos_equipo"  value="<?php echo $datos_equipo ?>" />
-			
+     			<textarea rows="2" cols="60" name="datos_equipo" id="datos_equipo"><?php echo $datos_equipo ?></textarea>
             </label>
 </div>          
           <div align="center">

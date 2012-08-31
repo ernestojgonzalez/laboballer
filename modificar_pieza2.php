@@ -147,7 +147,7 @@ $totalRows_nueva = mysql_num_rows($nueva);
       <div align="center">
 	  <strong>MODIFICAR PARTE DEL EQUIPO</strong>
 	  <table width="400" border="8" bordercolor="#CCCCCC" align="center">
-        <tr><td><strong>Nombre de equipo:</strong></td><td><?php echo "  $row[1], $row[0]" ?></td></tr>
+        <tr><td><strong>Nombre de equipo:</strong></td><td><?php echo "  $row[1]" ?></td></tr>
         <tr>
           <td><strong>Nombre de la Parte </strong><strong>del empleado:</strong></td>
           <td><?php echo "  $row[4]" ?></td></tr>
@@ -164,21 +164,20 @@ $totalRows_nueva = mysql_num_rows($nueva);
  
 <p align="center" class="Estilo3"><strong>REGISTRO</strong></p>
 <div align="center">
-  <table  width="772" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
+  <table  width="300" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
     <tr>
-      <td width="100" height="64">&nbsp;</td>
-      <td width="144"></td>
+      <td colspan="2">&nbsp;</td>
       <td><div align="center">
            
               <strong>Equipo</strong>
                   <select name="nombre_equipo" id="nombre_equipo">
-                    <option selected="selected">------Seleccionar-----</option>
-					<option se value="" <?php if (!(strcmp("", $row_nueva['nombre_equipo']))) {echo "selected=\"selected\"";} ?>>
+                    <option><?php echo "$nombre_equipo"; ?></option>
+					<option se value="" <?php if (!(strcmp("", $row_nueva['nombre_equipo']))) {echo "$nombre_equipo";} ?>>
                     
 					<?php
 do {  
 ?>
-                    <option value="<?php echo $row_nueva['nombre_equipo']?>"<?php if (!(strcmp($row_nueva['nombre_equipo'], $row_nueva['nombre_equipo']))) {echo "selected=\"selected\"";} ?>><?php echo $row_nueva['nombre_equipo']?></option>
+                    <option value="<?php echo $row_nueva['nombre_equipo']?>"<?php if (!(strcmp($row_nueva['nombre_equipo'], $row_nueva['nombre_equipo'])))  ?>><?php echo $row_nueva['nombre_equipo']?></option>
                     <?php
 } while ($row_nueva = mysql_fetch_assoc($nueva));
   $rows = mysql_num_rows($nueva);
@@ -190,13 +189,12 @@ do {
             </select>
                  </p>
       </div></td>
-      <td width="94">&nbsp;</td>
-      <td width="150">&nbsp;</td>
-    </tr>
+      <td colspan="2">&nbsp;</td>
+      </tr>
   </table>
  
   <p>PARTES DEL EQUIPO</p>
-  <table  width="772" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
+  <table  width="600" bgcolor="#BDBDBD" align="center" border="1" bordercolor="#FFFFFF">
     <tr>
       <td colspan="2"><div align="center">PARTES DEL EQUIPO</div>
           <label></label></td>
@@ -215,9 +213,9 @@ do {
       </div></td>
       <td width="395" bgcolor="#BDBDBD">&nbsp;</td>
     </tr>
-  <td width="110"><div align="center"><strong>Código</strong></div></td>
+  <td width="110"><div align="center"><strong><br><br>Código</strong></div></td>
       <td width="144"><label> </label>
-          <div align="center">
+          <div align="center"><br><br>
             <input name="codigo_parte" type="text" id="codigo_parte" value="<?php echo $codigo_parte ?>" />
         </div></td>
     <td width="95" bgcolor="#BDBDBD"><div align="center">

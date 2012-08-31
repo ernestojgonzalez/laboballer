@@ -108,7 +108,7 @@
 
 	}
 
-	$hasta=10000000;
+	$hasta=10;
 	$desde=($hasta*$pag)-$hasta;
 // consulta a la tabla informe_personal	
 	$consulta="SELECT * FROM empleado where match (cedula,nombre,apellido,cargo,sexo,fecha,horario) against ('$criterio*' IN BOOLEAN MODE) order by fecha LIMIT $desde, $hasta";
@@ -123,18 +123,26 @@
 <table width="550"  border="1" class="tabla1"/>
 
    <TR bgcolor="#E4E4E7">
-
+	
 	<TH>Empleado</TH>
 	<TH>Sexo</TH>    
 	<TH>Telefono</TH>
 	<TH>Direccion</TH>
 	<TH>Fecha</TH>
-	<TH>Horario</TH>
-	<TH>Cargo</TH>
+	<TH>Salario</TH>
+	<TH width="100">Cargo</TH>
     <TH>Foto</TH>
   </tr>
 	<?PHP
 		$i=0;
+		$resultado=basedatos($consulta);
+		$nro_fil = mysql_num_rows($resultado);
+		 		  if($nro_fil == 0)
+                   {
+
+                   echo "<center><br><br><strong><center>El empleado $criterio no existe en nuestra base de datos <br> por favor valide sus datos.</center></strong></center><br></br><br></br>";
+                   }else
+                   
 		while ($row = mysql_fetch_row($resultado))
     {
        $link2 =$row[9];
@@ -144,9 +152,14 @@
 		echo "<td><br></br>$row[4]</td>";
 		echo "<td><br>$row[5]</td>";
        	echo "<td><br></br>$row[7]</td>";
-       	echo "<td><br></br>$row[8]</td>";
-		echo "<td><br></br>$row[3]</td>";
-	    echo "<td><a target=_blank href='$link2'><img src='$row[9]' width='100'height='70'></a></td>";
+       	echo "<td><p>$row[3]<br>Horario:$row[8]<br>horas diarias:$row[12]</td>";
+		$dia1=($row[11]/30);
+		$dia=round($dia1*100) /100;
+		$horad1=($dia/$row[12]);
+		$horad=round($horad1*100) /100;
+		echo "<td><P>Salario_del_empleado <br>Mensual $row[11] bs<br>Diario $dia<br>por hora$horad</td>";
+	    
+		echo "<td><a target=_blank href='$link2'><img src='$row[9]' width='100'height='70'></a></td>";
 	   $i=$i+1;
 
        if (($i%1)==0)

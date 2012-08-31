@@ -120,7 +120,7 @@
 
 
   <TR>
-
+	<TH bgcolor="#E4E4E7">Estatus</TH>
 	<TH bgcolor="#E4E4E7">Equipo</TH>
 	<TH bgcolor="#E4E4E7" >Empleado</TH>
 	<TH bgcolor="#E4E4E7" >Prioridad</TH>
@@ -136,9 +136,9 @@
     {
 
 
-
-       	echo "<td><center>$row[6]</td>";
 		echo "<td><center>$row[5]</td>";
+       	echo "<td><center>$row[7]</td>";
+		echo "<td><center>$row[6]</td>";
        	echo "<td><center>$row[4]</td>";
 		echo "<td><center>$row[3]</td>";
        	echo "<td><center>$row[2]</td>";

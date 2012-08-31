@@ -14,7 +14,7 @@ $totalRows_odt2 = mysql_num_rows($odt2);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ne-us" xml:lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>FORMULARIO EQUIPO</title>
 <!-- plantilla  -->
     <meta name="description" content="Description" />
@@ -75,8 +75,8 @@ $totalRows_odt2 = mysql_num_rows($odt2);
         </div>
         <script type="text/javascript">    swfobject.switchOffAutoHideShow(); swfobject.registerObject("art-flash-object", "9.0.0", "expressInstall.swf");</script>
         <div class="art-logo">
-                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER  </a></h1>
-                         <h2 class="art-logo-text"> BARRY WEHMILLER  Lavadora de botellas</h2>
+                 <h1 class="art-logo-name"><a href="./index.php">LABOBALLER Â </a></h1>
+                         <h2 class="art-logo-text">Â BARRY WEHMILLER Â Lavadora de botellas</h2>
                 </div>
     </div>
     </div>
@@ -175,19 +175,30 @@ $totalRows_odt2 = mysql_num_rows($odt2);
 				</script></div>
       </tr>
     </table>
+	<p>&nbsp;</p>
+	<p>Estatus</p>
+	<table width="250" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+	<tr>
+		<td headers="80"><center>Activado</td>
+		<td headers="20"><center><input name="estatus" type="radio" value="activo"/></td>
+		<td headers="80"><center>Culminado</td>
+		<td headers="20"><center><input name="estatus" type="radio" value="culminado" />
+		</td>
+	</tr>
+	</table>
     <p>&nbsp;</p>
     <p>DATOS DEL  EMPLEADO</p>
-    <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+    <table width="700" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
       <tr>
         <td height="26"><div align="center">
           <label></label>
             <label>
             <select name="datos_empleado" id="datos_empleado">
-             <option selected="selected">-------->  Seleccionar...</option>
+             <option selected="selected">Seleccionar</option>
 			  <?php
 do {  
 ?>
-              <option value="<?php echo $row_odt['nombre'],'  ',$row_odt['apellido'],'  ',$row_odt['cedula']?>"<?php if (!(strcmp($row_odt['nombre'], $row_odt['nombre'])))  ?>><?php echo $row_odt['nombre'],'   ',$row_odt['apellido'],'   ',$row_odt['cedula'],'   ',$row_odt['sexo'],'   ',$row_odt['cargo'],'   ',$row_odt['horario']?></option>
+              <option value="<?php echo $row_odt['nombre'],' ',$row_odt['apellido'],', ',$row_odt['cedula']?>"<?php if (!(strcmp($row_odt['nombre'], $row_odt['nombre'])))  ?>><?php echo $row_odt['nombre'],' CI:',$row_odt['cedula'],',  ',$row_odt['sexo'],',  ',$row_odt['cargo'],',  ',$row_odt['horario']?></option>
               <?php
 } while ($row_odt = mysql_fetch_assoc($odt));
   $rows = mysql_num_rows($odt);
@@ -213,7 +224,7 @@ do {
     <p><br>
     </p>
     <p>DATOS DEL EQUIPO </p>
-    <table width="772" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
+    <table width="700" bgcolor="#BDBDBD" border="1" bordercolor="#FFFFFF">
       <tr>
         <td height="26"><div align="center"><strong>Equipo
           <label></label>
@@ -221,11 +232,11 @@ do {
             <label></label>
             <label>
             <select name="datos_equipo" id="datos_equipo">
-            <option selected="selected">-------->  Seleccionar...</option>
+            <option selected="selected">Seleccionar</option>
 			  <?php
 do {  
 ?>
-              <option value="<?php echo $row_odt2['codigo_equipo'],$row_odt2['nombre_equipo']?>"<?php if (!(strcmp($row_odt2['codigo_equipo'], $row_odt2['codigo_equipo'])))  ?>><?php echo $row_odt2['codigo_equipo'],'  ',$row_odt2['nombre_equipo']?></option>
+              <option value="<?php echo $row_odt2['codigo_equipo'],' ',$row_odt2['nombre_equipo']?>"<?php if (!(strcmp($row_odt2['codigo_equipo'], $row_odt2['codigo_equipo'])))  ?>><?php echo 'Codigo: ',$row_odt2['codigo_equipo'],' ','Nombre del equipo: ',$row_odt2['nombre_equipo']?></option>
               <?php
 } while ($row_odt2 = mysql_fetch_assoc($odt2));
   $rows = mysql_num_rows($odt2);
@@ -259,6 +270,43 @@ do {
     <input name="submit" type="submit" value="Guardar">
 </div>
  </form>
+
+<!-- FINALIZA LA PAG -->
+<!-- PIE DE PAG -->
+         </div>       <div class="cleared"></div>
+                </div>
+
+		<div class="cleared"></div>
+    </div>
+</div>
+
+                      <div class="cleared"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cleared"></div>
+            <div class="art-footer">
+                <div class="art-footer-t"></div>
+                <div class="art-footer-l"></div>
+                <div class="art-footer-b"></div>
+                <div class="art-footer-r"></div>
+                <div class="art-footer-body">
+                            <div class="art-footer-text">
+                                
+<p><a href="#">Link1</a> | <a href="#">Link2</a> | <a href="#">Link3</a></p>
+<p>Derechos reservados en EspaÃ±ol</p>
+
+
+                                                            </div>
+                    <div class="cleared"></div>
+                </div>
+            </div>
+    		<div class="cleared"></div>
+        </div>
+    </div>
+    <div class="cleared"></div>
+    <p class="art-page-footer"><a href="http://www.artisteer.com/?p=website_templates">Website Template</a> created with Artisteer.</p>
+</div>
 
 </body>
 </html>

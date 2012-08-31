@@ -123,6 +123,7 @@
 <table width="650"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
 
    <TR bgcolor="#E4E4E7">
+	<TH >Estatus</TH>
 	<TH width="80">Datos del Empleado</TH>
 	<TH>Datos del Equipo</TH>
 	<TH>Prioridad</TH>
@@ -136,9 +137,9 @@
     {
        
         
-	
-       	echo "<td><center>$row[5]</td>";
-		echo "<td><center>$row[6]</td>";
+		echo "<td><center>$row[5]</td>";
+       	echo "<td><center>$row[6]</td>";
+		echo "<td><center>$row[7]</td>";
 		echo "<td><center>$row[4]</td>";
 		echo "<td><center>$row[2]</td>";
        	echo "<td><center>$row[3]</td>";

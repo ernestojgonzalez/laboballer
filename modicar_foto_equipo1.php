@@ -128,7 +128,7 @@ else
 			 // modifica la tabla cuando el nu de registro sea igual al num de registro recibido
              $Insertar= "UPDATE equipo SET titulo='$titulo', archivo='$ruta' WHERE $id_equipo=id_equipo";
              $resultadoins=basedatos($Insertar);
-             echo "<p><strong><center>Informe almacenado</center></strong></p>";
+             echo "<p><strong><center>Foto Modificada</center></strong></p>";
            }
        mysql_close ($enlace);
    }else

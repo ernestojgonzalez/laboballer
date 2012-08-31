@@ -99,6 +99,7 @@ $fallos=$_POST['fallos'];
 $fecha_ini=$_POST['fecha_ini'];
 $fecha_fin=$_POST['fecha_fin'];
 $prioridad=$_POST['prioridad'];
+$estatus=$_POST['estatus'];
 $datos_empleado=$_POST['datos_empleado'];
 $datos_equipo=$_POST['datos_equipo'];
 
@@ -122,8 +123,8 @@ $fallos=strtoupper($fallos);
 $prioridad=strtoupper($prioridad);
 $datos_empleado=strtoupper($datos_empleado);
 $datos_equipo=strtoupper($datos_equipo);
-            
-			$Insertar= "UPDATE odt SET  fallos='$fallos',fecha_ini='$fecha_ini',fecha_fin='$fecha_fin',prioridad='$prioridad',datos_empleado='$datos_empleado',datos_equipo='$datos_equipo' WHERE id_odt = '$id_odt' ";
+$estatus=strtoupper($estatus);            
+			$Insertar= "UPDATE odt SET  fallos='$fallos',fecha_ini='$fecha_ini',fecha_fin='$fecha_fin',prioridad='$prioridad',estatus='$estatus',datos_empleado='$datos_empleado',datos_equipo='$datos_equipo' WHERE id_odt = '$id_odt' ";
 			
 			 		 
 			 

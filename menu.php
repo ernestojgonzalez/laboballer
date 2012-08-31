@@ -54,8 +54,13 @@
                  <li><a href="consulta_odt.php">ODT</a></li>
 				
         </ul>
+		</li>	
+		<li>
+			<a href="consultadiaria.php"><span class="l"></span><span class="r"></span><span class="t">Consulta Diaria</span></a>
+
 		</li>			
 	</ul>
+	
 </div>
 </div>
 <div class="cleared reset-box"></div>

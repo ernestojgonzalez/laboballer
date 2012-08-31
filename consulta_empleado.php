@@ -123,7 +123,7 @@
 
 	}
 
-	$hasta=10;
+	$hasta=5;
 
 	$desde=($hasta*$pag)-$hasta;
 
@@ -139,6 +139,15 @@
 
 <center>
 
+<?php 
+		
+
+$resultado=basedatos($consulta);
+		$nro_fil = mysql_num_rows($resultado);
+	echo "$nro_fil";	
+
+
+?>
 <table width="630"  border="1" bordercolor="#CCCCCC" class="tabla1"/>
 <CAPTION><strong>
 
@@ -159,6 +168,8 @@
   </tr>
 
 	<?PHP
+		
+		
 		$i=0;
 		while ($row = mysql_fetch_row($resultado))
     {
@@ -196,7 +207,7 @@
   </table>
 
  <?PHP
-
+		
 		$consulta="select count(nombre) from empleado";
 
 		$lista=mysql_query($consulta,$enlace);
@@ -225,7 +236,7 @@
 			echo "<a href=\"consulta_empleado.php?pag=".($pag+1)."\">>></a> <a href=\"pagina1.php?pag=".($paginas)."\">|</a>";
 
 		}
-
+	
 	?>
 <!-- FINALIZA LA PAG -->
 <!-- PIE DE PAG -->

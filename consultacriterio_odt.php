@@ -80,12 +80,12 @@
 <h2 class="art-postheader" align="center">LABOBALLER</h2>
                 <div class="cleared"></div>
         <div class="art-postcontent">
-<!-- EMPIEZA LA PAG -->
+<!-- EMPIEZA LA PAG <form action="consultacriterio_odt2.php" method="post" name="form1" id="form1">-->
                             <br><br>
 <center>
 <p> ESTA CONSULTA PUEDE SER POR;<br>Nombre del equipo </p>
 
-<form action="consultacriterio_odt2.php" method="post" name="form1" id="form1">
+<form action="fpdf/reporte.php" method="post" name="form1" id="form1">
 <table width="255" border="1" bordercolor="CCCCCC" align="center">
 <TR>
 <td> <center>Equipo</td>

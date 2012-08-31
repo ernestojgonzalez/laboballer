@@ -188,8 +188,8 @@
           <label>
           <select name="horario" id="horario">
             <option>Seleccionar</option>
-            <option value="diurno">Diurno</option>
-            <option value="nocturno">Nocturno</option>
+            <option value="Diurno">Diurno</option>
+            <option value="Nocturno">Nocturno</option>
           </select>
           </label>
           </div></td>
@@ -197,6 +197,35 @@
         <td width="149"><div align="center">
           <input name="cargo" type="text" id="cargo" />
         </div></td>
+      </tr>
+    </table>
+  <br>
+  <br>
+   <table  border="1" bordercolor="#FFFFFF" width="772" bgcolor="#BDBDBD">
+      <tr>
+        <td width="99"><div align="center"><strong>Salario</strong></div></td>
+        
+        <td width="144"><select name="salario" id="salario">
+            <option>Seleccionar</option>
+            <option value="5000">Ingeniero = 5000</option>
+            <option value="3000">Licenciado = 3000</option>
+			<option value="2500">Tecnico medio = 2500</option>
+            <option value="2047">Bachiller = 2470</option>
+          </select></td>
+		<td width="96">&nbsp;</td>
+        <td width="149">&nbsp;</td>
+        <td width="100"><div align="center"><strong>Horas de Trabajo </strong></div></td>
+        <td width="144"><div align="center">
+          <label>
+          <select name="hora" id="hora">
+            <option>Seleccionar</option>
+            <option value="8">Diurno 8 horas</option>
+            <option value="12">Nocturno 12 horas</option>
+          </select>
+          </label>
+          </div></td>
+	
+        
       </tr>
     </table>
   <br>

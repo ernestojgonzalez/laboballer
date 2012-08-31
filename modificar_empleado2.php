@@ -153,7 +153,7 @@
         <tr><td><strong>Telefono:</strong></td><td><?php echo "  $row[4]" ?></td></tr>
         <tr><td><strong>Direccion:</strong></td><td><?php echo "  $row[5]" ?></td></tr>
         <tr><td><strong>Fecha de Ingreso:</strong></td><td><?php echo "  $row[7]" ?></td></tr>
-        <tr><td><strong>Horario de Trabajo:</strong></td><td><?php echo "  $row[8]" ?></td></tr>
+        <tr><td><strong>Horas de Trabajo:</strong></td><td><?php echo "  $row[8]" ?></td></tr>
         <tr><td><strong>Cargo:</strong></td><td><?php echo "  $row[3]" ?></td></tr>			  
         <tr><td><strong>Foto del Empleado:</strong></td><td><?php echo "<a href='$link2'>$row[9]</a>" ?></td></tr><br /> </table>        
         <?php
@@ -240,12 +240,12 @@
 				</script>
             </div></td>
           <!-- combo 1 municipio -->
-            <td width="100"><div align="center"><strong>Horario de Trabajo</strong></div></td>
+            <td width="100"><div align="center"><strong>Horas de Trabajo</strong></div></td>
           <td width="144"><div align="center">
             <select name="horario" id="horario">
             <option selected><?php echo $horario ?></option>
-            <option value="diurno">Diurno</option>
-            <option value="nocturno">Nocturno</option>
+            <option value="8">Diurno 8 horas</option>
+            <option value="12">Nocturno 12 horas</option>
           </select>
             </div></td>
           <td width="96"><div align="center"><strong>Cargo </strong></div></td>
